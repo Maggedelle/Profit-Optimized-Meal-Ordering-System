@@ -2,19 +2,22 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import {
+    REACT_APP_FIREBASE_API_KEY, REACT_APP_FIREBASE_AUTH_DOMAIN, REACT_APP_FIREBASE_PROJECT_ID, REACT_APP_FIRBASE_STORAGE_BUCKET, REACT_APP_FIREBASE_MESSAGING_SENDER_ID, REACT_APP_FIREBASE_APP_ID, REACT_APP_FIREBASE_MEASUREMENT_ID
+} from "@env";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyBNM7-X_GiiteURmOFRUjK8m-oRdatbbYQ",
-    authDomain: "p8-profit-optimized-ordering.firebaseapp.com",
-    projectId: "p8-profit-optimized-ordering",
-    storageBucket: "p8-profit-optimized-ordering.appspot.com",
-    messagingSenderId: "334758812599",
-    appId: "1:334758812599:web:3eadc6d664c34fe158a632",
-    measurementId: "G-S1NNGSVE10"
+    apiKey: REACT_APP_FIREBASE_API_KEY,
+    authDomain: REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: REACT_APP_FIRBASE_STORAGE_BUCKET,
+    messagingSenderId: REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: REACT_APP_FIREBASE_APP_ID,
+    measurementId: REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
