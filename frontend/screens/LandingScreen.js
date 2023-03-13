@@ -1,9 +1,9 @@
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { auth } from '../firebase';
-import { useNavigation } from '@react-navigation/native';
 import { Image } from 'react-native';
 import { useFonts } from 'expo-font';
+import { useNavigation } from '@react-navigation/native';
 
 export default function LandingScreen() {
 
@@ -12,6 +12,18 @@ export default function LandingScreen() {
         'anti-bold': require('../assets/fonts/AntipastoPro-ExtraBold_trial.ttf'),
         'anti': require('../assets/fonts/AntipastoPro-DemiBold_trial.ttf')
     });
+
+
+    const navigation = useNavigation();
+
+
+    const onRegisterClick = () => {
+        navigation.navigate("Register");
+    }
+
+    const onLoginClick = () => {
+        navigation.navigate("Login");
+    }
 
     if (!loaded) return null;
     return (
@@ -27,11 +39,11 @@ export default function LandingScreen() {
                 <Text style={styles.text}>We assign orders to you in a way that is fair for everyone</Text>
             </View>
 
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.registerButton}>
+            <View style={styles.buttonContainer} >
+                <TouchableOpacity style={styles.registerButton} onPress={onRegisterClick}>
                     <Text style={styles.text}>Register</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.loginButton}>
+                <TouchableOpacity style={styles.loginButton} onPress={onLoginClick}>
                     <Text style={styles.text}>Sign In</Text>
                 </TouchableOpacity>
             </View>
