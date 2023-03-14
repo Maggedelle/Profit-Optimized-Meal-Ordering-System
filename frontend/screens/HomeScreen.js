@@ -8,7 +8,7 @@ export default function HomeScreen() {
     const handleSignOut = () => {
         auth.signOut()
             .then(() => {
-                navigation.replace("Login");
+                navigation.replace("Landing");
             })
             .catch(error => alert(error.message))
     }
