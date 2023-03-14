@@ -53,7 +53,7 @@ export default function RegisterScreen() {
                     name: name,
                     vehicle: vehicle,
                 }).then(result => {
-                    console.log(result)
+
                 }).catch(error => alert(error.message))
             }).catch(error => alert(error.message))
     }
