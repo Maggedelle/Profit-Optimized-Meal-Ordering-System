@@ -1,0 +1,7 @@
+"C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.3.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\homeProjects\Profit-Optimized-Meal-Ordering-System\Server\algorithms -B C:\homeProjects\Profit-Optimized-Meal-Ordering-System\Server\algorithms\cmake-build-debug
+-- pybind11 v2.11.0 dev1
+-- pybind11::lto disabled (problems with undefined symbols for MinGW for now)
+-- pybind11::thin_lto disabled (problems with undefined symbols for MinGW for now)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/homeProjects/Profit-Optimized-Meal-Ordering-System/Server/algorithms/cmake-build-debug
