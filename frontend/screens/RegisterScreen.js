@@ -1,9 +1,10 @@
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useState, useEffect } from 'react'
-import { auth } from '../firebase';
+import { auth, db } from '../firebase';
 import { useNavigation } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Image } from 'react-native';
+import { ref, set } from "firebase/database";
 
 export default function RegisterScreen() {
 
@@ -47,7 +48,13 @@ export default function RegisterScreen() {
         auth.createUserWithEmailAndPassword(email, password)
             .then(userCredentials => {
                 const user = userCredentials.user;
-                console.log(user.email);
+                set(ref(db, 'users/' + user.uid), {
+                    email: user.email,
+                    name: name,
+                    vehicle: vehicle,
+                }).then(result => {
+                    console.log(result)
+                }).catch(error => alert(error.message))
             }).catch(error => alert(error.message))
     }
 
