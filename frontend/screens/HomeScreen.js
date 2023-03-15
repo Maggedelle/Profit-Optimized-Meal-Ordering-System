@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import { Image } from 'react-native'
+import React, { useState } from 'react'
+import { Image, Switch } from 'react-native'
 import { auth } from '../firebase'
 import { useNavigation } from '@react-navigation/native'
 import { REACT_APP_API_URL } from "@env";
@@ -34,6 +34,9 @@ export default function HomeScreen() {
         })
     }
 
+    const [isEnabled, setIsEnabled] = useState(false);
+    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
     const homeIconPath = require("../assets/home.png");
     const ordersIconPath = require("../assets/orders.png");
     const profileIconPath = require("../assets/profile.png")
@@ -47,13 +50,26 @@ export default function HomeScreen() {
     return (
         <View style={styles.container}>
             <ScrollView>
-                <Text>Welcome {auth.currentUser.id}</Text>
-                <TouchableOpacity onPress={sendRequest}>
-                    <Text>Send Request</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={handleSignOut}>
-                    <Text>Sign out</Text>
-                </TouchableOpacity>
+                <View style={styles.base}>
+                    <Text style={styles.header}>
+                        Ready to recieve orders?
+                    </Text>
+                    <Text style={styles.text}>
+                        Click the switch to change your online status!
+                    </Text>
+                    <Switch
+                        trackColor={{ false: '#767577', true: '#81b0ff' }}
+                        thumbColor={isEnabled ? 'lightgreen' : 'red'}
+                        ios_backgroundColor="#3e3e3e"
+                        onValueChange={toggleSwitch}
+                        value={isEnabled}
+                        style={styles.switch}
+                    >
+
+                    </Switch>
+                    {isEnabled ? (<Text style={styles.text}>We will let you know when we have an order for you</Text>
+                    ) : (<Text style={styles.text}>You will not recieve any orders when you are offline</Text>)}
+                </View>
             </ScrollView>
 
             <View style={styles.footer}>
@@ -78,7 +94,18 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#FFB6B9",
-
+        paddingTop: 40,
+    },
+    base: {
+        alignItems: "center",
+        justifyContent: "center",
+        display: "flex"
+    },
+    header: {
+        fontFamily: "anti-bold",
+        fontWeight: 'bold',
+        fontSize: 32,
+        color: "white"
     },
     footer: {
         display: "flex",
@@ -104,5 +131,15 @@ const styles = StyleSheet.create({
         fontSize: 12,
         fontFamily: 'anti',
         fontWeight: "bold"
+    },
+    switch: {
+        transform: [{ scaleX: 2 }, { scaleY: 2 }]
+    },
+    text: {
+        fontFamily: "anti",
+        color: "white",
+        fontSize: 20,
+        fontWeight: 500,
+        textAlign: "center",
     }
 })
