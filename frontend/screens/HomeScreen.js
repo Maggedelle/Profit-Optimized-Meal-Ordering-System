@@ -1,5 +1,5 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Image, Switch } from 'react-native'
 import { auth } from '../firebase'
 import { useNavigation } from '@react-navigation/native'
@@ -9,13 +9,6 @@ import { useFonts } from 'expo-font';
 export default function HomeScreen() {
 
     const navigation = useNavigation();
-    const handleSignOut = () => {
-        auth.signOut()
-            .then(() => {
-                navigation.replace("Landing");
-            })
-            .catch(error => alert(error.message))
-    }
 
     const sendRequest = () => {
         fetch(REACT_APP_API_URL + '/worker/state', {
@@ -25,7 +18,8 @@ export default function HomeScreen() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                someParam: "Test"
+                id: auth.currentUser.uid,
+                online: isEnabled,
             })
         }).then(json => {
             console.log(json)
@@ -35,12 +29,20 @@ export default function HomeScreen() {
     }
 
     const [isEnabled, setIsEnabled] = useState(false);
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
+    useEffect(() => {
+        sendRequest();
+    }, [isEnabled])
+
+
+    const toggleSwitch = () => {
+        setIsEnabled(!isEnabled);
+    };
 
     const homeIconPath = require("../assets/home.png");
     const ordersIconPath = require("../assets/orders.png");
-    const profileIconPath = require("../assets/profile.png")
-
+    const profileIconPath = require("../assets/profile.png");
+    const checklistPath = require("../assets/checklist.png");
     const [loaded] = useFonts({
         'anti-bold': require('../assets/fonts/AntipastoPro-ExtraBold_trial.ttf'),
         'anti': require('../assets/fonts/AntipastoPro-DemiBold_trial.ttf')
@@ -51,12 +53,15 @@ export default function HomeScreen() {
         <View style={styles.container}>
             <ScrollView>
                 <View style={styles.base}>
+
+                    <Image style={styles.bigImage} source={checklistPath} />
                     <Text style={styles.header}>
-                        Ready to recieve orders?
+                        You have no current order
                     </Text>
                     <Text style={styles.text}>
-                        Click the switch to change your online status!
+                        In order to recieve orders, make sure to switch on your availability.
                     </Text>
+                    <View style={styles.divider} />
                     <Switch
                         trackColor={{ false: '#767577', true: '#81b0ff' }}
                         thumbColor={isEnabled ? 'lightgreen' : 'red'}
@@ -94,7 +99,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#FFB6B9",
-        paddingTop: 40,
+        justifyContent: "center",
+        display: "flex",
+        paddingTop: "20%"
     },
     base: {
         alignItems: "center",
@@ -104,8 +111,11 @@ const styles = StyleSheet.create({
     header: {
         fontFamily: "anti-bold",
         fontWeight: 'bold',
-        fontSize: 32,
+        fontSize: 26,
         color: "white"
+    },
+    divider: {
+        marginBottom: 40,
     },
     footer: {
         display: "flex",
@@ -131,6 +141,11 @@ const styles = StyleSheet.create({
         fontSize: 12,
         fontFamily: 'anti',
         fontWeight: "bold"
+    },
+    bigImage: {
+        width: 120,
+        height: 120,
+        marginBottom: 20,
     },
     switch: {
         transform: [{ scaleX: 2 }, { scaleY: 2 }]
