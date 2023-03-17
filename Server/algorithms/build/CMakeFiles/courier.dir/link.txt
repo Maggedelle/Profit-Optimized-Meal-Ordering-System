@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcourier.a CMakeFiles/courier.dir/utils/courier.cpp.o
+/usr/bin/ranlib libcourier.a
