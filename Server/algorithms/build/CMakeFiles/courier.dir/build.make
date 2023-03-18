@@ -83,17 +83,33 @@ CMakeFiles/courier.dir/utils/courier.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/courier.dir/utils/courier.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/courier.cpp -o CMakeFiles/courier.dir/utils/courier.cpp.s
 
+CMakeFiles/courier.dir/utils/profit_wrap.cpp.o: CMakeFiles/courier.dir/flags.make
+CMakeFiles/courier.dir/utils/profit_wrap.cpp.o: ../utils/profit_wrap.cpp
+CMakeFiles/courier.dir/utils/profit_wrap.cpp.o: CMakeFiles/courier.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/courier.dir/utils/profit_wrap.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/courier.dir/utils/profit_wrap.cpp.o -MF CMakeFiles/courier.dir/utils/profit_wrap.cpp.o.d -o CMakeFiles/courier.dir/utils/profit_wrap.cpp.o -c /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/profit_wrap.cpp
+
+CMakeFiles/courier.dir/utils/profit_wrap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/courier.dir/utils/profit_wrap.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/profit_wrap.cpp > CMakeFiles/courier.dir/utils/profit_wrap.cpp.i
+
+CMakeFiles/courier.dir/utils/profit_wrap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/courier.dir/utils/profit_wrap.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/profit_wrap.cpp -o CMakeFiles/courier.dir/utils/profit_wrap.cpp.s
+
 # Object files for target courier
 courier_OBJECTS = \
-"CMakeFiles/courier.dir/utils/courier.cpp.o"
+"CMakeFiles/courier.dir/utils/courier.cpp.o" \
+"CMakeFiles/courier.dir/utils/profit_wrap.cpp.o"
 
 # External object files for target courier
 courier_EXTERNAL_OBJECTS =
 
 libcourier.a: CMakeFiles/courier.dir/utils/courier.cpp.o
+libcourier.a: CMakeFiles/courier.dir/utils/profit_wrap.cpp.o
 libcourier.a: CMakeFiles/courier.dir/build.make
 libcourier.a: CMakeFiles/courier.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcourier.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libcourier.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/courier.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/courier.dir/link.txt --verbose=$(VERBOSE)
 

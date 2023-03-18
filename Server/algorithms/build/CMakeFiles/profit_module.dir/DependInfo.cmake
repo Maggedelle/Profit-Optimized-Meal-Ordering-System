@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/courier.cpp" "CMakeFiles/courier.dir/utils/courier.cpp.o" "gcc" "CMakeFiles/courier.dir/utils/courier.cpp.o.d"
-  "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/profit_wrap.cpp" "CMakeFiles/courier.dir/utils/profit_wrap.cpp.o" "gcc" "CMakeFiles/courier.dir/utils/profit_wrap.cpp.o.d"
+  "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/main.cpp" "CMakeFiles/profit_module.dir/main.cpp.o" "gcc" "CMakeFiles/profit_module.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles/profit_module_cpp.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

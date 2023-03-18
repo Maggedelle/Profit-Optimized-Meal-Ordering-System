@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -flto -shared  -o profit_module.cpython-310-x86_64-linux-gnu.so CMakeFiles/profit_module.dir/main.cpp.o  libprofit_module_cpp.a 

@@ -117,37 +117,37 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named courier
+# Target rules for targets named profit_module_cpp
 
 # Build rule for target.
-courier: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 courier
-.PHONY : courier
+profit_module_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 profit_module_cpp
+.PHONY : profit_module_cpp
 
 # fast build rule for target.
-courier/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/courier.dir/build.make CMakeFiles/courier.dir/build
-.PHONY : courier/fast
+profit_module_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/build
+.PHONY : profit_module_cpp/fast
 
 #=============================================================================
-# Target rules for targets named cmake_example
+# Target rules for targets named profit_module
 
 # Build rule for target.
-cmake_example: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cmake_example
-.PHONY : cmake_example
+profit_module: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 profit_module
+.PHONY : profit_module
 
 # fast build rule for target.
-cmake_example/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmake_example.dir/build.make CMakeFiles/cmake_example.dir/build
-.PHONY : cmake_example/fast
+profit_module/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module.dir/build.make CMakeFiles/profit_module.dir/build
+.PHONY : profit_module/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmake_example.dir/build.make CMakeFiles/cmake_example.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module.dir/build.make CMakeFiles/profit_module.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -155,7 +155,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmake_example.dir/build.make CMakeFiles/cmake_example.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module.dir/build.make CMakeFiles/profit_module.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -163,7 +163,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmake_example.dir/build.make CMakeFiles/cmake_example.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module.dir/build.make CMakeFiles/profit_module.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 utils/courier.o: utils/courier.cpp.o
@@ -171,7 +171,7 @@ utils/courier.o: utils/courier.cpp.o
 
 # target to build an object file
 utils/courier.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/courier.dir/build.make CMakeFiles/courier.dir/utils/courier.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/courier.cpp.o
 .PHONY : utils/courier.cpp.o
 
 utils/courier.i: utils/courier.cpp.i
@@ -179,7 +179,7 @@ utils/courier.i: utils/courier.cpp.i
 
 # target to preprocess a source file
 utils/courier.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/courier.dir/build.make CMakeFiles/courier.dir/utils/courier.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/courier.cpp.i
 .PHONY : utils/courier.cpp.i
 
 utils/courier.s: utils/courier.cpp.s
@@ -187,8 +187,32 @@ utils/courier.s: utils/courier.cpp.s
 
 # target to generate assembly for a file
 utils/courier.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/courier.dir/build.make CMakeFiles/courier.dir/utils/courier.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/courier.cpp.s
 .PHONY : utils/courier.cpp.s
+
+utils/profit_wrap.o: utils/profit_wrap.cpp.o
+.PHONY : utils/profit_wrap.o
+
+# target to build an object file
+utils/profit_wrap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/profit_wrap.cpp.o
+.PHONY : utils/profit_wrap.cpp.o
+
+utils/profit_wrap.i: utils/profit_wrap.cpp.i
+.PHONY : utils/profit_wrap.i
+
+# target to preprocess a source file
+utils/profit_wrap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/profit_wrap.cpp.i
+.PHONY : utils/profit_wrap.cpp.i
+
+utils/profit_wrap.s: utils/profit_wrap.cpp.s
+.PHONY : utils/profit_wrap.s
+
+# target to generate assembly for a file
+utils/profit_wrap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/profit_wrap.cpp.s
+.PHONY : utils/profit_wrap.cpp.s
 
 # Help Target
 help:
@@ -198,14 +222,17 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... cmake_example"
-	@echo "... courier"
+	@echo "... profit_module"
+	@echo "... profit_module_cpp"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... utils/courier.o"
 	@echo "... utils/courier.i"
 	@echo "... utils/courier.s"
+	@echo "... utils/profit_wrap.o"
+	@echo "... utils/profit_wrap.i"
+	@echo "... utils/profit_wrap.s"
 .PHONY : help
 
 

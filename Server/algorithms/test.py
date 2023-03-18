@@ -1,7 +1,8 @@
 import sys
 sys.path.append('build')
 
-import cmake_example
+import profit_module as pm
 
-cmake_example.add(1,2)
-cmake_example.hello()
+print(pm.add(1,2))
+pm.hello()
+pm.hello2()
