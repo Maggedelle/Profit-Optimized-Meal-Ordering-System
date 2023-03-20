@@ -196,16 +196,16 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_NAME:STATIC=profit_maximization
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION:STATIC=2.10.4
+CMAKE_PROJECT_VERSION:STATIC=2.11.0
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION_MAJOR:STATIC=2
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION_MINOR:STATIC=10
+CMAKE_PROJECT_VERSION_MINOR:STATIC=11
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION_PATCH:STATIC=4
+CMAKE_PROJECT_VERSION_PATCH:STATIC=0
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION_TWEAK:STATIC=
@@ -303,15 +303,6 @@ PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python3
 
 //Path to a library.
 PYTHON_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpython3.10.so
-
-//Value Computed by CMake
-cmake_example_BINARY_DIR:STATIC=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build
-
-//Value Computed by CMake
-cmake_example_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-cmake_example_SOURCE_DIR:STATIC=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms
 
 //Value Computed by CMake
 profit_maximization_BINARY_DIR:STATIC=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build
