@@ -1,7 +1,10 @@
 from flask import Flask, jsonify
 from flask import request
-app = Flask(__name__)
+from flask_socketio import SocketIO
 
+async_mode = None
+app = Flask(__name__)
+socket_ = SocketIO(app, async_mode=async_mode)
 
 onlineUsers = []
 
@@ -21,5 +24,7 @@ def updateState():
     
     print(onlineUsers)
     return data
-    
-app.run('0.0.0.0', port=5000)
+
+if __name__ == '__main__':
+    socket_.run(app, debug=True)   
+    app.run('0.0.0.0', port=5000)
