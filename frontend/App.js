@@ -6,11 +6,12 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import LandingScreen from './screens/LandingScreen';
 import HomeScreen from './screens/HomeScreen';
-
+import Socket, { sendMessage } from "./utils/socket";
 const Stack = createNativeStackNavigator();
 
 
 export default function App() {
+  const socket = Socket();
   return (
     <NavigationContainer>
       <Stack.Navigator>
