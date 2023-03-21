@@ -190,6 +190,30 @@ utils/courier.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/courier.cpp.s
 .PHONY : utils/courier.cpp.s
 
+utils/order.o: utils/order.cpp.o
+.PHONY : utils/order.o
+
+# target to build an object file
+utils/order.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/order.cpp.o
+.PHONY : utils/order.cpp.o
+
+utils/order.i: utils/order.cpp.i
+.PHONY : utils/order.i
+
+# target to preprocess a source file
+utils/order.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/order.cpp.i
+.PHONY : utils/order.cpp.i
+
+utils/order.s: utils/order.cpp.s
+.PHONY : utils/order.s
+
+# target to generate assembly for a file
+utils/order.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/order.cpp.s
+.PHONY : utils/order.cpp.s
+
 utils/profit_wrap.o: utils/profit_wrap.cpp.o
 .PHONY : utils/profit_wrap.o
 
@@ -230,6 +254,9 @@ help:
 	@echo "... utils/courier.o"
 	@echo "... utils/courier.i"
 	@echo "... utils/courier.s"
+	@echo "... utils/order.o"
+	@echo "... utils/order.i"
+	@echo "... utils/order.s"
 	@echo "... utils/profit_wrap.o"
 	@echo "... utils/profit_wrap.i"
 	@echo "... utils/profit_wrap.s"

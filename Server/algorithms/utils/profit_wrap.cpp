@@ -1,6 +1,13 @@
 #include "profit_wrap.hpp"
+#include "string"
 
+
+Courier courier = {"Test", 123,123,123};
+Order order;
 
 void hello2() {
-  std::cout << "Hello from profit_wrap.cpp";
+  order.id = "hello";
+  courier.longitude = 1;
+  std::cout << courier << std::endl;
+  std::cout << order << std::endl;
 }
