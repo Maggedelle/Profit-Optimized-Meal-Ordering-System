@@ -3,4 +3,4 @@ sys.path.append('build')
 
 import profit_module as pm
 
-pm.hello2()
+print(pm.hello2())

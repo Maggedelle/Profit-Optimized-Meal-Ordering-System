@@ -238,6 +238,30 @@ utils/profit_wrap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/profit_wrap.cpp.s
 .PHONY : utils/profit_wrap.cpp.s
 
+utils/utility.o: utils/utility.cpp.o
+.PHONY : utils/utility.o
+
+# target to build an object file
+utils/utility.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o
+.PHONY : utils/utility.cpp.o
+
+utils/utility.i: utils/utility.cpp.i
+.PHONY : utils/utility.i
+
+# target to preprocess a source file
+utils/utility.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.i
+.PHONY : utils/utility.cpp.i
+
+utils/utility.s: utils/utility.cpp.s
+.PHONY : utils/utility.s
+
+# target to generate assembly for a file
+utils/utility.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.s
+.PHONY : utils/utility.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -260,6 +284,9 @@ help:
 	@echo "... utils/profit_wrap.o"
 	@echo "... utils/profit_wrap.i"
 	@echo "... utils/profit_wrap.s"
+	@echo "... utils/utility.o"
+	@echo "... utils/utility.i"
+	@echo "... utils/utility.s"
 .PHONY : help
 
 

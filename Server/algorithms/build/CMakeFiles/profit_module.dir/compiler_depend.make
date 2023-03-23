@@ -406,7 +406,6 @@ CMakeFiles/profit_module.dir/main.cpp.o: ../main.cpp \
   ../pybind11/include/pybind11/options.h \
   ../pybind11/include/pybind11/detail/init.h \
   ../pybind11/include/pybind11/gil.h \
-  ../utils/courier.hpp \
   ../utils/profit_wrap.hpp \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
@@ -423,9 +422,9 @@ CMakeFiles/profit_module.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  ../utils/order.hpp \
+  ../utils/utility.hpp \
   ../utils/courier.hpp \
-  ../utils/utility.hpp
+  ../utils/order.hpp
 
 
 ../utils/utility.hpp:
@@ -438,11 +437,11 @@ CMakeFiles/profit_module.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
-../utils/profit_wrap.hpp:
+../utils/courier.hpp:
 
 /usr/include/c++/11/ostream:
 
-../utils/courier.hpp:
+../utils/profit_wrap.hpp:
 
 ../pybind11/include/pybind11/gil.h:
 
