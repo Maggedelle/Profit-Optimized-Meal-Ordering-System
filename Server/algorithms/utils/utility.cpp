@@ -32,6 +32,9 @@ namespace utils {
     // Handle the earths curvature
     long double total_distance = (distance1 + distance2) * R;
 
+    // Convert from kilometers to meters
+    total_distance *= 1000;
+
     return total_distance;
   }
 
