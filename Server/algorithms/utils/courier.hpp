@@ -9,6 +9,7 @@ class Courier {
     long double latitude {};
     long double longitude {};
     int speed {};
+    int max_distance {};
 
     friend std::ostream& operator<<(std::ostream&, const Courier&);
 };

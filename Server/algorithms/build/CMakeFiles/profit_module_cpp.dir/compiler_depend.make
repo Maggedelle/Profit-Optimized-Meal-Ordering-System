@@ -335,6 +335,14 @@ CMakeFiles/profit_module_cpp.dir/utils/order.cpp.o: ../utils/order.cpp \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
+  /usr/include/c++/11/vector \
+  /usr/include/c++/11/bits/stl_uninitialized.h \
+  /usr/include/c++/11/bits/stl_vector.h \
+  /usr/include/c++/11/bits/stl_bvector.h \
+  /usr/include/c++/11/bits/vector.tcc \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  ../utils/courier.hpp \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -546,12 +554,15 @@ CMakeFiles/profit_module_cpp.dir/utils/profit_wrap.cpp.o: ../utils/profit_wrap.c
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  ../utils/utility.hpp \
+  ../utils/greedy.hpp \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  ../utils/utility.hpp \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -577,8 +588,8 @@ CMakeFiles/profit_module_cpp.dir/utils/profit_wrap.cpp.o: ../utils/profit_wrap.c
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  ../utils/courier.hpp \
-  ../utils/order.hpp
+  ../utils/order.hpp \
+  ../utils/courier.hpp
 
 CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o: ../utils/utility.cpp \
   /usr/include/stdc-predef.h \
@@ -693,10 +704,9 @@ CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o: ../utils/utility.cpp \
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  ../utils/courier.hpp \
-  /usr/include/c++/11/string \
+  ../utils/order.hpp \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
-  /usr/include/c++/11/bits/char_traits.h \
   /usr/include/c++/11/bits/postypes.h \
   /usr/include/c++/11/cwchar \
   /usr/include/wchar.h \
@@ -707,6 +717,8 @@ CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o: ../utils/utility.cpp \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/c++/11/string \
+  /usr/include/c++/11/bits/char_traits.h \
   /usr/include/c++/11/cstdint \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
   /usr/include/stdint.h \
@@ -716,7 +728,6 @@ CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o: ../utils/utility.cpp \
   /usr/include/c++/11/clocale \
   /usr/include/locale.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
-  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/cctype \
   /usr/include/ctype.h \
   /usr/include/c++/11/bits/ostream_insert.h \
@@ -763,7 +774,9 @@ CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o: ../utils/utility.cpp \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
-  ../utils/order.hpp
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  ../utils/courier.hpp
 
 
 /usr/include/c++/11/tr1/riemann_zeta.tcc:
@@ -790,6 +803,12 @@ CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o: ../utils/utility.cpp \
 
 /usr/include/math.h:
 
+../utils/profit_wrap.hpp:
+
+../utils/profit_wrap.cpp:
+
+/usr/include/c++/11/bits/stl_relops.h:
+
 /usr/include/c++/11/bits/vector.tcc:
 
 /usr/include/c++/11/bits/stl_bvector.h:
@@ -797,10 +816,6 @@ CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o: ../utils/utility.cpp \
 /usr/include/c++/11/bits/stl_uninitialized.h:
 
 /usr/include/c++/11/vector:
-
-../utils/profit_wrap.hpp:
-
-../utils/profit_wrap.cpp:
 
 /usr/include/c++/11/bits/istream.tcc:
 
@@ -873,6 +888,8 @@ CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o: ../utils/utility.cpp \
 /usr/include/wctype.h:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/c++/11/utility:
 
 /usr/include/errno.h:
 
@@ -991,6 +1008,8 @@ CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o: ../utils/utility.cpp \
 /usr/include/c++/11/bits/exception.h:
 
 /usr/include/c++/11/bits/range_access.h:
+
+../utils/greedy.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
 

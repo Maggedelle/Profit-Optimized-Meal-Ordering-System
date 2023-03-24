@@ -46,6 +46,8 @@ namespace utils {
   }
 
   int calc_time_needed(const long double& dist, const int& velocity) {
-    return 0;
+    int distance = round(dist / velocity);
+
+    return distance;
   }
 }

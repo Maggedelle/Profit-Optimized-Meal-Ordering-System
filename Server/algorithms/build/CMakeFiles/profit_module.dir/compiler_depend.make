@@ -423,8 +423,8 @@ CMakeFiles/profit_module.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../utils/utility.hpp \
-  ../utils/courier.hpp \
-  ../utils/order.hpp
+  ../utils/order.hpp \
+  ../utils/courier.hpp
 
 
 ../utils/utility.hpp:

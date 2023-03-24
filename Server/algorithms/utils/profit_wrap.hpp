@@ -1,4 +1,4 @@
 #include "iostream"
-#include "utility.hpp"
+#include "greedy.hpp"
 
 long double hello2();
