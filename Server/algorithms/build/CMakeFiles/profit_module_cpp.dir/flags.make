@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = 
 
-CXX_FLAGS = -fPIC
+CXX_FLAGS = -fPIC -std=c++20
 

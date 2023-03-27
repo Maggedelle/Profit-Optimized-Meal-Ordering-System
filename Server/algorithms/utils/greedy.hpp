@@ -1,8 +1,10 @@
 #include "vector"
 #include "utility"
+#include "tuple"
 #include "utility.hpp"
+#include "ranges"
 
 namespace greedy {
-std::vector<std::pair<Courier, Order>> greedy_approach (std::vector<Courier> couriers, std::vector<Order> orders);
-std::vector<Courier> get_available_couriers (const Order& order, const std::vector<Courier>& couriers);
-}
+  std::tuple<std::vector<std::pair<Courier, Order>>, int> greedy_approach (const std::vector<Courier>& couriers, std::vector<Order>& orders);
+  std::vector<Courier> get_available_couriers (const std::vector<Courier>& couriers, const Order& order);
+} 

@@ -6,5 +6,5 @@ CXX_DEFINES = -Dprofit_module_EXPORTS
 
 CXX_INCLUDES = -isystem /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/pybind11/include -isystem /usr/include/python3.10
 
-CXX_FLAGS = -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects
+CXX_FLAGS = -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -std=c++20
 
