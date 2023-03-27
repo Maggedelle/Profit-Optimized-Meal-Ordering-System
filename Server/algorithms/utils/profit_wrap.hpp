@@ -6,4 +6,4 @@
 #include "utility"
 #include "tuple"
 
-long double hello2();
+string hello2();

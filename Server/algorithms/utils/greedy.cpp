@@ -1,13 +1,29 @@
 #include "greedy.hpp"
+#include "iostream"
+#include "experimental/vector"
 
 namespace greedy {
 
-  std::tuple<std::vector<std::pair<Courier, Order>>, int> greedy_approach (const std::vector<Courier>& couriers, std::vector<Order>& orders) {
+  std::tuple<std::vector<std::pair<Courier, Order>>, int> greedy_approach (std::vector<Courier> couriers,const std::vector<Order>& orders) {
     std::vector<std::pair<Courier, Order>> greedy_assignment {};
+    int total_assignment_reward = 0;
 
-    greedy_assignment.push_back(std::make_pair(couriers[0],orders[0]));
+    for(const auto& order: orders) {
+      const auto AC = get_available_couriers(couriers, order);
 
-    return {greedy_assignment, 12};
+      if(AC.size() == 0)
+        continue;
+
+      total_assignment_reward += order.reward;
+      greedy_assignment.push_back(std::make_pair(AC[0],order));
+      string id_to_remove = AC[0].id;
+
+      couriers.erase(std::remove_if(begin(couriers),end(couriers),[id_to_remove](const auto& courier) {
+            return courier.id == id_to_remove;
+            }), end(couriers));
+    }
+
+    return {greedy_assignment, total_assignment_reward};
   }
 
   std::vector<Courier> get_available_couriers(const std::vector<Courier>& couriers, const Order& order) {
@@ -21,10 +37,10 @@ namespace greedy {
     }
 
     sort(begin(AC),end(AC), [copy_order](const auto& lhs, const auto& rhs){
-        long double dist_lhs = utils::calc_distance(lhs, copy_order);
-        long double dist_rhs = utils::calc_distance(rhs, copy_order);
-        int time_needed_lhs = utils::calc_time_needed(dist_lhs, lhs.speed);
-        int time_needed_rhs = utils::calc_time_needed(dist_rhs, rhs.speed);
+        const auto dist_lhs = utils::calc_distance(lhs, copy_order);
+        const auto dist_rhs = utils::calc_distance(rhs, copy_order);
+        const auto time_needed_lhs = utils::calc_time_needed(dist_lhs, lhs.speed);
+        const auto time_needed_rhs = utils::calc_time_needed(dist_rhs, rhs.speed);
 
         return time_needed_lhs < time_needed_rhs;
         });
