@@ -20,6 +20,15 @@ namespace greedy {
       AC.push_back(courier);
     }
 
+    sort(begin(AC),end(AC), [copy_order](const auto& lhs, const auto& rhs){
+        long double dist_lhs = utils::calc_distance(lhs, copy_order);
+        long double dist_rhs = utils::calc_distance(rhs, copy_order);
+        int time_needed_lhs = utils::calc_time_needed(dist_lhs, lhs.speed);
+        int time_needed_rhs = utils::calc_time_needed(dist_rhs, rhs.speed);
+
+        return time_needed_lhs < time_needed_rhs;
+        });
+
     return AC;
   }
 }
