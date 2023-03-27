@@ -361,4 +361,11 @@ CMakeFiles/profit_module.dir/main.cpp.o: \
  /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/utility.hpp \
  /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/order.hpp \
  /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/courier.hpp \
- /usr/include/c++/11/ranges /usr/include/c++/11/bits/ranges_util.h
+ /usr/include/c++/11/ranges /usr/include/c++/11/bits/ranges_util.h \
+ /usr/include/c++/11/experimental/vector /usr/include/c++/11/algorithm \
+ /usr/include/c++/11/bits/ranges_algo.h \
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/11/experimental/memory_resource \
+ /usr/include/c++/11/experimental/utility \
+ /usr/include/c++/11/experimental/bits/lfts_config.h \
+ /usr/include/c++/11/atomic

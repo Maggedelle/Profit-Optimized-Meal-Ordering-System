@@ -1,6 +1,4 @@
 #include "greedy.hpp"
-#include "iostream"
-#include "experimental/vector"
 
 namespace greedy {
 
@@ -29,7 +27,7 @@ namespace greedy {
   std::vector<Courier> get_available_couriers(const std::vector<Courier>& couriers, const Order& order) {
     std::vector<Courier> AC{};
     Order copy_order = order;
-    auto within_distance =  [copy_order](Courier courier) { return courier.max_distance <= utils::calc_distance(courier, copy_order);};
+    auto within_distance =  [copy_order](Courier courier) { return utils::calc_distance(courier, copy_order) <= courier.max_distance;};
 
     for(const auto& courier : couriers
                             | std::views::filter(within_distance)) {
