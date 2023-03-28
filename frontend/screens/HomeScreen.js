@@ -15,33 +15,21 @@ import { WS } from "../utils/socket";
 
 export default function HomeScreen() {
   const navigation = useNavigation();
+
   WS.onMessage((data) => {
     alert(data.message);
   });
-  const sendRequest = () => {
-    fetch(REACT_APP_API_URL + "/worker/state", {
-      method: "POST",
-      headers: {
-        Acccept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: auth.currentUser.uid,
-        online: isEnabled,
-      }),
-    })
-      .then((json) => {
-        console.log(json);
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  };
 
   const [isEnabled, setIsEnabled] = useState(false);
 
   useEffect(() => {
-    sendRequest();
+    WS.sendMessage(
+      JSON.stringify({
+        id: auth.currentUser.uid,
+        online: isEnabled,
+        type: "updateState",
+      })
+    );
   }, [isEnabled]);
 
   const toggleSwitch = () => {

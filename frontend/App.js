@@ -13,6 +13,10 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   WS.init();
 
+  WS.onOpen((data) => {
+    alert("Connected to websocket server");
+  });
+
   WS.onError((data) => {
     alert(data.message);
   });
