@@ -1,24 +1,25 @@
-
-
 import { REACT_APP_SOCKET_URL } from "@env";
 
-var ws = new WebSocket(REACT_APP_SOCKET_URL);
-export default function Socket() {
+export class WS {
+  static init() {
+    const url = REACT_APP_SOCKET_URL;
+    this.ws = new WebSocket(url);
+  }
+  static onMessage(handler) {
+    this.ws.addEventListener("message", handler);
+  }
 
-    ws.onopen = () => {
-        console.log("Connected to socket server")
-    };
+  static onOpen(handler) {
+    this.ws.addEventListener("open", handler);
+  }
 
-    ws.onmessage = (e) => {
-        console.log("Recieved Message");
-    }
+  static onError(handler) {
+    this.ws.addEventListener("error", handler);
+  }
 
-    ws.onerror = (e) => {
-        // an error occurred
-        alert(e.message + ": Please restart app.");
-    };
-
-}
-export function sendMessage(message) {
-    ws.send(message);
+  static sendMessage(message) {
+    // You can have some transformers here.
+    // Object to JSON or something else...
+    this.ws.send(message);
+  }
 }
