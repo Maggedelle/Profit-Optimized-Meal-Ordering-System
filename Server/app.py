@@ -1,39 +1,22 @@
-from flask import Flask, jsonify
-from flask import request
-from flask_sock import Sock
-import ast
-import json
-app = Flask(__name__)
-sock = Sock(app)
+import eventlet
+import socketio
 
-onlineUsers = []
+sio = socketio.Server()
+app = socketio.WSGIApp(sio, static_files={
+    '/': {'content_type': 'text/html', 'filename': 'index.html'}
+})
 
+@sio.event
+def connect(sid, environ):
+    print('connect ', sid)
 
-@app.route("/")
-def hello_magnus():
-    return "<p> Hello, Magnus :)!</p>"
+@sio.event
+def my_message(sid, data):
+    print('message ', data)
 
-
-@app.route("/worker/state", methods=['POST'])
-def updateState():
-    data = request.get_json()
-    if(data["online"] == True):
-        onlineUsers.append(data["id"])
-    else:
-        onlineUsers.remove(data["id"])
-
-    print(onlineUsers)
-    return data
-
-
-@sock.route('/socket')
-def socket(ws):
-    while True:
-        data = ws.receive()
-        print(data)
-        hansi = json.loads(data)
-        print(hansi["type"])
-
+@sio.event
+def disconnect(sid):
+    print('disconnect ', sid)
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000)
+    eventlet.wsgi.server(eventlet.listen(('', 5000)), app)

@@ -3,7 +3,7 @@ import { REACT_APP_SOCKET_URL } from "@env";
 export class WS {
   static init() {
     const urls = REACT_APP_SOCKET_URL;
-    this.ws = new WebSocket(urls);
+    this.ws = new WebSocket(REACT_APP_SOCKET_URL);
   }
   static onMessage(handler) {
     this.ws.addEventListener("message", handler);
