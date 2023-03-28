@@ -1,4 +1,5 @@
 #include "utility.hpp"
+#include "iostream"
 
 constexpr long double R = 6371;
 
@@ -7,12 +8,12 @@ namespace utils {
   long double calc_distance(const Courier& courier, const Order& order) {
 
     // Convert longitude and latitude coordinates to radians
-    long double courier_lat = to_radians(courier.latitude);
-    long double courier_long = to_radians(courier.longitude);
-    long double order_lat = to_radians(order.order_lat);
-    long double order_long = to_radians(order.order_long);
-    long double restaurant_lat = to_radians(order.restaurant_lat);
-    long double restaurant_long = to_radians(order.restaurant_long);
+    const auto courier_lat = to_radians(courier.latitude);
+    const auto courier_long = to_radians(courier.longitude);
+    const auto order_lat = to_radians(order.order_lat);
+    const auto order_long = to_radians(order.order_long);
+    const auto restaurant_lat = to_radians(order.restaurant_lat);
+    const auto restaurant_long = to_radians(order.restaurant_long);
 
     // Haversine formula en.wikipedia.org/wiki/Haversine_formula
     // First get the difference between the courier and the restaurant
@@ -46,7 +47,8 @@ namespace utils {
   }
 
   int calc_time_needed(const long double& dist, const int& velocity) {
-    int time_needed = round(dist / velocity) * 60;
+    int time_needed = (dist / velocity) * 60;
+    std::cout << time_needed << std::endl;
 
     return time_needed;
   }
