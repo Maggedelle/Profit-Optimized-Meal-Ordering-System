@@ -30,7 +30,7 @@ string hello2() {
   std::cout << "Show that get_available_couriers sorts on max_distance and fastest to fulfill" << std::endl << std::endl;
   std::cout << "Before: ";
   std::cout << "First element speed: " << couriers[0].speed << ", second element speed: " << couriers[1].speed << std::endl;
-  const auto AC = greedy::get_available_couriers(couriers, order);
+  const auto AC = utils::get_available_couriers(couriers, order);
   std::cout << "End: ";
   std::cout << "First element speed: " << AC[0].speed << ", second element speed: " << AC[1].speed << std::endl;
 

@@ -52,4 +52,26 @@ namespace utils {
 
     return time_needed;
   }
+
+  std::vector<Courier> get_available_couriers(const std::vector<Courier>& couriers, const Order& order) {
+    std::vector<Courier> AC{};
+    Order copy_order = order;
+    auto within_distance =  [copy_order](Courier courier) { return calc_distance(courier, copy_order) <= courier.max_distance;};
+
+    for(const auto& courier : couriers
+                            | std::views::filter(within_distance)) {
+      AC.push_back(courier);
+    }
+
+    sort(begin(AC),end(AC), [copy_order](const auto& lhs, const auto& rhs){
+        const auto dist_lhs = calc_distance(lhs, copy_order);
+        const auto dist_rhs = calc_distance(rhs, copy_order);
+        const auto time_needed_lhs = calc_time_needed(dist_lhs, lhs.speed);
+        const auto time_needed_rhs = calc_time_needed(dist_rhs, rhs.speed);
+
+        return time_needed_lhs < time_needed_rhs;
+        });
+
+    return AC;
+  }
 }
