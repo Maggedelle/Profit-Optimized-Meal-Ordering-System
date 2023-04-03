@@ -5,6 +5,6 @@
 #include "ranges"
 #include "experimental/vector"
 
-namespace greedy {
+namespace approach {
   std::tuple<std::vector<std::pair<Courier, Order>>, int> greedy_approach (std::vector<Courier> couriers,const std::vector<Order>& orders);
 } 
