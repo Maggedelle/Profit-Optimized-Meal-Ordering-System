@@ -158,7 +158,7 @@ CMakeFiles/profit_module_cpp.dir/utils/profit_wrap.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/greedy.hpp \
+ /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/approaches.hpp \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \

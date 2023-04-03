@@ -166,6 +166,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module.dir/build.make CMakeFiles/profit_module.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+utils/approaches.o: utils/approaches.cpp.o
+.PHONY : utils/approaches.o
+
+# target to build an object file
+utils/approaches.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o
+.PHONY : utils/approaches.cpp.o
+
+utils/approaches.i: utils/approaches.cpp.i
+.PHONY : utils/approaches.i
+
+# target to preprocess a source file
+utils/approaches.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.i
+.PHONY : utils/approaches.cpp.i
+
+utils/approaches.s: utils/approaches.cpp.s
+.PHONY : utils/approaches.s
+
+# target to generate assembly for a file
+utils/approaches.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.s
+.PHONY : utils/approaches.cpp.s
+
 utils/courier.o: utils/courier.cpp.o
 .PHONY : utils/courier.o
 
@@ -189,30 +213,6 @@ utils/courier.s: utils/courier.cpp.s
 utils/courier.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/courier.cpp.s
 .PHONY : utils/courier.cpp.s
-
-utils/greedy.o: utils/greedy.cpp.o
-.PHONY : utils/greedy.o
-
-# target to build an object file
-utils/greedy.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/greedy.cpp.o
-.PHONY : utils/greedy.cpp.o
-
-utils/greedy.i: utils/greedy.cpp.i
-.PHONY : utils/greedy.i
-
-# target to preprocess a source file
-utils/greedy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/greedy.cpp.i
-.PHONY : utils/greedy.cpp.i
-
-utils/greedy.s: utils/greedy.cpp.s
-.PHONY : utils/greedy.s
-
-# target to generate assembly for a file
-utils/greedy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/greedy.cpp.s
-.PHONY : utils/greedy.cpp.s
 
 utils/order.o: utils/order.cpp.o
 .PHONY : utils/order.o
@@ -299,12 +299,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... utils/approaches.o"
+	@echo "... utils/approaches.i"
+	@echo "... utils/approaches.s"
 	@echo "... utils/courier.o"
 	@echo "... utils/courier.i"
 	@echo "... utils/courier.s"
-	@echo "... utils/greedy.o"
-	@echo "... utils/greedy.i"
-	@echo "... utils/greedy.s"
 	@echo "... utils/order.o"
 	@echo "... utils/order.i"
 	@echo "... utils/order.s"

@@ -17,8 +17,9 @@ string hello2() {
   orders.push_back(order2);
   orders.push_back(order1);
 
-  const auto [vec_pair, reward] = approach::greedy_approach(couriers,orders);
+  const auto [vec_pair, reward, travel_time] = approach::greedy_approach(couriers,orders);
   std::cout << "Reward for the 3 orders: " <<  reward << std::endl;
+  std::cout << "travel time for the 3 orders: " <<  travel_time << std::endl;
   std::cout << "Possible orders to fulfill: " << orders.size() << std::endl;
   std::cout << "Used number of orders: " << vec_pair.size() << std::endl;
   std::cout << "Orders used: ";

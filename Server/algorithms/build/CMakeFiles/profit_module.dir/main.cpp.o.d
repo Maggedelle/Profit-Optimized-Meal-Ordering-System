@@ -357,7 +357,7 @@ CMakeFiles/profit_module.dir/main.cpp.o: \
  /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/profit_wrap.hpp \
  /usr/include/c++/11/iostream /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/greedy.hpp \
+ /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/approaches.hpp \
  /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/utility.hpp \
  /usr/include/c++/11/ranges /usr/include/c++/11/bits/ranges_util.h \
  /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/order.hpp \

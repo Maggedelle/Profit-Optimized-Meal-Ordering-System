@@ -440,12 +440,12 @@ CMakeFiles/profit_module.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  ../utils/greedy.hpp \
+  ../utils/approaches.hpp \
   ../utils/utility.hpp \
-  ../utils/order.hpp \
-  ../utils/courier.hpp \
   /usr/include/c++/11/ranges \
   /usr/include/c++/11/bits/ranges_util.h \
+  ../utils/order.hpp \
+  ../utils/courier.hpp \
   /usr/include/c++/11/experimental/vector \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/bits/ranges_algo.h \
@@ -464,7 +464,7 @@ CMakeFiles/profit_module.dir/main.cpp.o: ../main.cpp \
 
 ../utils/utility.hpp:
 
-../utils/greedy.hpp:
+../utils/approaches.hpp:
 
 /usr/include/c++/11/istream:
 

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o"
+  "CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o.d"
   "CMakeFiles/profit_module_cpp.dir/utils/courier.cpp.o"
   "CMakeFiles/profit_module_cpp.dir/utils/courier.cpp.o.d"
-  "CMakeFiles/profit_module_cpp.dir/utils/greedy.cpp.o"
-  "CMakeFiles/profit_module_cpp.dir/utils/greedy.cpp.o.d"
   "CMakeFiles/profit_module_cpp.dir/utils/order.cpp.o"
   "CMakeFiles/profit_module_cpp.dir/utils/order.cpp.o.d"
   "CMakeFiles/profit_module_cpp.dir/utils/profit_wrap.cpp.o"
