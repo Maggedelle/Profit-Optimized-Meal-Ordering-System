@@ -48,7 +48,6 @@ namespace utils {
 
   int calc_time_needed(const long double& dist, const int& velocity) {
     int time_needed = (dist / velocity) * 60;
-    std::cout << time_needed << std::endl;
 
     return time_needed;
   }
