@@ -1,4 +1,4 @@
-#include "greedy.hpp"
+#include "approaches.hpp"
 
 namespace greedy {
 
