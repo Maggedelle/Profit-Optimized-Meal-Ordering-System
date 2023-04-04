@@ -1,25 +1,36 @@
-from flask import Flask, jsonify
-from flask import request
-app = Flask(__name__)
+from fastapi import FastAPI, WebSocket
+import uvicorn
+import datetime as dt
+import json
+app = FastAPI(title='API')
 
 
-onlineUsers = []
 
 
-@app.route("/")
-def hello_magnus():
-    return "<p> Hello, Magnus :)!</p>"
+class connectionUser:
+    def __init__(self, id, pose):
+        self.id = id
+    id: str
+
+connections = []
 
 
-@app.route("/worker/state", methods = ['POST'])
-def updateState():
-    data = request.get_json()
-    if(data["online"] == True):
-        onlineUsers.append(data["id"])
-    else:
-        onlineUsers.remove(data["id"])
-    
-    print(onlineUsers)
-    return data
-    
-app.run('0.0.0.0', port=5000)
+def getUser (id):
+    return next(x for x in connections if x.id == id)
+
+
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+
+    while True:
+        try:
+            data = await websocket.receive_json()
+            if(data["type"] == "updateState"):
+                print("lol")
+        except Exception as e:
+            print("error: ", e)
+            break
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=5000)
