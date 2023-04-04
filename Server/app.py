@@ -16,15 +16,27 @@ class connectionUser:
     online: bool
     socket:WebSocket
 
-connections = []
+connections:connectionUser = []
 
 
-def getUser (id):
+def getUser (id) -> connectionUser:
     try:
         return next(x for x in connections if x.id == id)
     except:
         return None
 
+
+def sendOrderToUser (userId):
+    user = getUser(userId)
+
+    if(user):
+        objectToEmit = {
+            "type": "user_recived_order",
+            "order": "someOrder"
+        }
+        user.socket.send_json(json.dumps(objectToEmit))
+    else:
+        raise Exception("Can't send order because user doesn't exist")
 
 
 @app.websocket("/ws")
