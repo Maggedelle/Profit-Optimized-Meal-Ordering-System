@@ -1,8 +1,5 @@
-from collections import defaultdict
-from getpass import getuser
 from fastapi import FastAPI, WebSocket
 import uvicorn
-import time, threading, queue
 import datetime as dt
 import json
 app = FastAPI(title='API')
