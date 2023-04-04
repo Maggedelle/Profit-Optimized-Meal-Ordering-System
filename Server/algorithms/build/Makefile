@@ -238,30 +238,6 @@ utils/order.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/order.cpp.s
 .PHONY : utils/order.cpp.s
 
-utils/profit_wrap.o: utils/profit_wrap.cpp.o
-.PHONY : utils/profit_wrap.o
-
-# target to build an object file
-utils/profit_wrap.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/profit_wrap.cpp.o
-.PHONY : utils/profit_wrap.cpp.o
-
-utils/profit_wrap.i: utils/profit_wrap.cpp.i
-.PHONY : utils/profit_wrap.i
-
-# target to preprocess a source file
-utils/profit_wrap.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/profit_wrap.cpp.i
-.PHONY : utils/profit_wrap.cpp.i
-
-utils/profit_wrap.s: utils/profit_wrap.cpp.s
-.PHONY : utils/profit_wrap.s
-
-# target to generate assembly for a file
-utils/profit_wrap.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/profit_wrap.cpp.s
-.PHONY : utils/profit_wrap.cpp.s
-
 utils/utility.o: utils/utility.cpp.o
 .PHONY : utils/utility.o
 
@@ -308,9 +284,6 @@ help:
 	@echo "... utils/order.o"
 	@echo "... utils/order.i"
 	@echo "... utils/order.s"
-	@echo "... utils/profit_wrap.o"
-	@echo "... utils/profit_wrap.i"
-	@echo "... utils/profit_wrap.s"
 	@echo "... utils/utility.o"
 	@echo "... utils/utility.i"
 	@echo "... utils/utility.s"
