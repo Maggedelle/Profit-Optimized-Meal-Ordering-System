@@ -63,87 +63,87 @@ CMAKE_BINARY_DIR = /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/courier.dir/all
-all: CMakeFiles/cmake_example.dir/all
-all: extern/pybind11/all
+all: CMakeFiles/profit_module_cpp.dir/all
+all: CMakeFiles/profit_module.dir/all
+all: pybind11/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: extern/pybind11/preinstall
+preinstall: pybind11/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/courier.dir/clean
-clean: CMakeFiles/cmake_example.dir/clean
-clean: extern/pybind11/clean
+clean: CMakeFiles/profit_module_cpp.dir/clean
+clean: CMakeFiles/profit_module.dir/clean
+clean: pybind11/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory extern/pybind11
+# Directory level rules for directory pybind11
 
 # Recursive "all" directory target.
-extern/pybind11/all:
-.PHONY : extern/pybind11/all
+pybind11/all:
+.PHONY : pybind11/all
 
 # Recursive "preinstall" directory target.
-extern/pybind11/preinstall:
-.PHONY : extern/pybind11/preinstall
+pybind11/preinstall:
+.PHONY : pybind11/preinstall
 
 # Recursive "clean" directory target.
-extern/pybind11/clean:
-.PHONY : extern/pybind11/clean
+pybind11/clean:
+.PHONY : pybind11/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/courier.dir
+# Target rules for target CMakeFiles/profit_module_cpp.dir
 
 # All Build rule for target.
-CMakeFiles/courier.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/courier.dir/build.make CMakeFiles/courier.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/courier.dir/build.make CMakeFiles/courier.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles --progress-num=3,4 "Built target courier"
-.PHONY : CMakeFiles/courier.dir/all
+CMakeFiles/profit_module_cpp.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles --progress-num=3,4,5,6,7,8 "Built target profit_module_cpp"
+.PHONY : CMakeFiles/profit_module_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/courier.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/courier.dir/all
+CMakeFiles/profit_module_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/profit_module_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles 0
-.PHONY : CMakeFiles/courier.dir/rule
+.PHONY : CMakeFiles/profit_module_cpp.dir/rule
 
 # Convenience name for target.
-courier: CMakeFiles/courier.dir/rule
-.PHONY : courier
+profit_module_cpp: CMakeFiles/profit_module_cpp.dir/rule
+.PHONY : profit_module_cpp
 
 # clean rule for target.
-CMakeFiles/courier.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/courier.dir/build.make CMakeFiles/courier.dir/clean
-.PHONY : CMakeFiles/courier.dir/clean
+CMakeFiles/profit_module_cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/clean
+.PHONY : CMakeFiles/profit_module_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cmake_example.dir
+# Target rules for target CMakeFiles/profit_module.dir
 
 # All Build rule for target.
-CMakeFiles/cmake_example.dir/all: CMakeFiles/courier.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmake_example.dir/build.make CMakeFiles/cmake_example.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmake_example.dir/build.make CMakeFiles/cmake_example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles --progress-num=1,2 "Built target cmake_example"
-.PHONY : CMakeFiles/cmake_example.dir/all
+CMakeFiles/profit_module.dir/all: CMakeFiles/profit_module_cpp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module.dir/build.make CMakeFiles/profit_module.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module.dir/build.make CMakeFiles/profit_module.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles --progress-num=1,2 "Built target profit_module"
+.PHONY : CMakeFiles/profit_module.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/cmake_example.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cmake_example.dir/all
+CMakeFiles/profit_module.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/profit_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles 0
-.PHONY : CMakeFiles/cmake_example.dir/rule
+.PHONY : CMakeFiles/profit_module.dir/rule
 
 # Convenience name for target.
-cmake_example: CMakeFiles/cmake_example.dir/rule
-.PHONY : cmake_example
+profit_module: CMakeFiles/profit_module.dir/rule
+.PHONY : profit_module
 
 # clean rule for target.
-CMakeFiles/cmake_example.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmake_example.dir/build.make CMakeFiles/cmake_example.dir/clean
-.PHONY : CMakeFiles/cmake_example.dir/clean
+CMakeFiles/profit_module.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module.dir/build.make CMakeFiles/profit_module.dir/clean
+.PHONY : CMakeFiles/profit_module.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

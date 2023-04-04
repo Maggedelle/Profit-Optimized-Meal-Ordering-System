@@ -1,9 +1,7 @@
 #include "courier.hpp"
+#include "iostream"
 
-void hello() {
-  std::cout << "Hello, Python";
-}
-
-int add(int i, int j) {
-  return i + j;
-}
+std::ostream& operator<<(std::ostream& os, const Courier& courier){
+      os << courier.id << ", " << courier.latitude << ", " << courier.longitude << ", " << courier.speed;
+      return os;
+ }

@@ -1,4 +1,15 @@
-#include "iostream"
+#include "string"
+#include "iosfwd"
 
-void hello();
-int add(int i, int j);
+using std::string;
+
+class Courier {
+  public:
+    string id {};
+    long double latitude {};
+    long double longitude {};
+    int speed {};
+    int max_distance {};
+
+    friend std::ostream& operator<<(std::ostream&, const Courier&);
+};
