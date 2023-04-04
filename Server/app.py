@@ -8,11 +8,13 @@ app = FastAPI(title='API')
 
 
 class connectionUser:
-    def __init__(self, id, online):
+    def __init__(self, id, online, socket):
         self.id = id
         self.online = online
+        self.socket = socket
     id: str
     online: bool
+    socket:WebSocket
 
 connections = []
 
@@ -35,7 +37,7 @@ async def websocket_endpoint(websocket: WebSocket):
             if(data["type"] == "updateState"):
                 user = getUser(data["id"])
                 if not user:
-                    connections.append(connectionUser(data["id"], data["online"]))
+                    connections.append(connectionUser(data["id"], data["online"], websocket))
                     print(data["id"] + " connceted")
                 else:
                     user.online = data["online"]
