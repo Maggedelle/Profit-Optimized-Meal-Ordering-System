@@ -1,6 +1,6 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
-#include "utils/profit_wrap.hpp"
+#include "utils/approaches.hpp"
 
 #define STRINGIFY(x) #x
 #define MACRO_STRINGIFY(x) STRINGIFY(x)
@@ -59,8 +59,7 @@ PYBIND11_MODULE(profit_module, m) {
           return "Order id: " + order.id + "";
         });
 
-  m.def("hello2", &hello2, "Awesome hello");
-  m.def("vec_test", &vec_test, "Awesome hello");
+  m.def("greedy_approach", &approach::greedy_approach, "Awesome hello");
 
   m.attr("__version__") = "0.1";
 }
