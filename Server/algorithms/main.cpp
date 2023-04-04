@@ -59,7 +59,8 @@ PYBIND11_MODULE(profit_module, m) {
           return "Order id: " + order.id + "";
         });
 
-  m.def("greedy_approach", &approach::greedy_approach, "Awesome hello");
+  m.def("greedy_approach", &approach::greedy_approach, "The greedy approach to assigning couriers to orders");
+  m.def("random_approach", &approach::random_approach, "The random approach to assigning couriers to orders");
 
   m.attr("__version__") = "0.1";
 }
