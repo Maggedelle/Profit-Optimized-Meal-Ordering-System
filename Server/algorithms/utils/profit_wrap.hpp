@@ -5,5 +5,7 @@
 #include "vector"
 #include "utility"
 #include "tuple"
+#include <vector>
 
-string hello2();
+int vec_test(const std::vector<Courier>& couriers);
+string hello2(const Courier test_courier);

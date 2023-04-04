@@ -1,6 +1,14 @@
 #include "profit_wrap.hpp"
+#include <vector>
 
-string hello2() {
+int vec_test(const std::vector<Courier>& couriers) {
+  int sum {};
+  for(const auto& x: couriers)
+    sum += x.speed;
+  return sum;
+}
+
+string hello2(const Courier test_courier) {
   Courier courier = {"Courier1", 53.32055555555556, -1.7297222222222221, 20000, 4500};
   Courier courier1 = {"Courier2", 53.32055555555556, -1.7297222222222221, 10000, 5000};
   Courier courier2 = {"Courier2", 53.32055555555556, -1.7297222222222221, 14000, 5000};
@@ -12,6 +20,9 @@ string hello2() {
   Order order1 = {"Order1", 53.32055555555556, -1.7297222222222221, 53.31861111111111, -1.6997222222222223, 1, 40, 7};
   std::vector<Courier> couriers;
   std::vector<Order> orders;
+
+  std::cout << "-----Test_courier print-------" << std::endl;
+  std::cout << test_courier.latitude + test_courier.longitude << std::endl;
 
   couriers.push_back(courier);
   couriers.push_back(courier1);

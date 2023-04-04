@@ -1,4 +1,5 @@
 #include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
 #include "utils/profit_wrap.hpp"
 
 #define STRINGIFY(x) #x
@@ -59,6 +60,7 @@ PYBIND11_MODULE(profit_module, m) {
         });
 
   m.def("hello2", &hello2, "Awesome hello");
+  m.def("vec_test", &vec_test, "Awesome hello");
 
   m.attr("__version__") = "0.1";
 }
