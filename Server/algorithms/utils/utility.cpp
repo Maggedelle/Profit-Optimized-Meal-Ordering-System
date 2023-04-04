@@ -72,10 +72,6 @@ namespace utils {
         return time_needed_lhs < time_needed_rhs;
         });
 
-    for(const auto& x: AC) {
-      std::cout << x.speed << ", ";
-    }
-    std::cout << "\n";
     return AC;
   }
 
