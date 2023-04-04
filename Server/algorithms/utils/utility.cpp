@@ -2,6 +2,7 @@
 #include "iostream"
 
 constexpr long double R = 6371;
+constexpr int penalty   =    1;
 
 namespace utils {
 
@@ -72,5 +73,19 @@ namespace utils {
         });
 
     return AC;
+  }
+
+  int calc_reward(const int& order_duration, const int& expected_time, const int& deadline, const int& reward) {
+    int total_reward {};
+
+    if(order_duration < expected_time) {
+      total_reward = reward;
+    }else if(expected_time < order_duration && order_duration < deadline) {
+      total_reward = reward - (penalty * (order_duration - expected_time));
+    }else {
+      total_reward = 0;
+    }
+
+    return total_reward;
   }
 }

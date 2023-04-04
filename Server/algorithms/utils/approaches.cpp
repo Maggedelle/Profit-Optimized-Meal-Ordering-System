@@ -15,10 +15,12 @@ namespace approach {
         continue;
 
       const auto courier = AC[0];
-      total_assignment_reward += order.reward;
-      total_assignment_travel_time += utils::calc_time_needed(
-          utils::calc_distance(courier, order),
-          courier.speed);
+      const auto distance = utils::calc_distance(courier, order);
+      const auto order_duration = utils::calc_time_needed(distance, courier.speed);
+
+      total_assignment_reward += utils::calc_reward(order_duration, order.expected_delivery, order.deadline, order.reward);
+      total_assignment_travel_time += order_duration; 
+
       greedy_assignment.push_back(std::make_pair(courier,order));
       string id_to_remove = courier.id;
 
@@ -51,10 +53,12 @@ namespace approach {
           );
 
       const auto courier = random_select[0];
-      total_assignment_reward += order.reward;
-      total_assignment_travel_time += utils::calc_time_needed(
-          utils::calc_distance(courier, order),
-          courier.speed);
+      const auto distance = utils::calc_distance(courier, order);
+      const auto order_duration = utils::calc_time_needed(distance, courier.speed);
+
+      total_assignment_reward += utils::calc_reward(order_duration, order.expected_delivery, order.deadline, order.reward);
+      total_assignment_travel_time += order_duration; 
+
       random_assignment.push_back(std::make_pair(courier,order));
       const auto id_to_remove = courier.id;
 
