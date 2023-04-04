@@ -1,22 +1,39 @@
-import eventlet
-import socketio
+from collections import defaultdict
+from getpass import getuser
+from fastapi import FastAPI, WebSocket
+import uvicorn
+import time, threading, queue
+import datetime as dt
+import json
+app = FastAPI(title='API')
 
-sio = socketio.Server()
-app = socketio.WSGIApp(sio, static_files={
-    '/': {'content_type': 'text/html', 'filename': 'index.html'}
-})
 
-@sio.event
-def connect(sid, environ):
-    print('connect ', sid)
 
-@sio.event
-def my_message(sid, data):
-    print('message ', data)
 
-@sio.event
-def disconnect(sid):
-    print('disconnect ', sid)
+class connectionUser:
+    def __init__(self, id, pose):
+        self.id = id
+    id: str
 
-if __name__ == '__main__':
-    eventlet.wsgi.server(eventlet.listen(('', 5000)), app)
+connections = []
+
+
+def getUser (id):
+    return next(x for x in connections if x.id == id)
+
+
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+
+    while True:
+        try:
+            data = await websocket.receive_json()
+            if(data["type"] == "updateState"):
+                print("lol")
+        except Exception as e:
+            print("error: ", e)
+            break
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=5000)
