@@ -2,6 +2,7 @@ import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, Vi
 import React, { useState, useEffect } from 'react'
 import { auth } from '../firebase';
 import { useNavigation } from '@react-navigation/native';
+import { WS } from "../utils/socket";
 
 export default function LoginScreen() {
 

@@ -16,9 +16,6 @@ import { WS } from "../utils/socket";
 export default function HomeScreen() {
   const navigation = useNavigation();
 
-  WS.onMessage((data) => {
-    alert(data.message);
-  });
 
   const [isEnabled, setIsEnabled] = useState(false);
 
