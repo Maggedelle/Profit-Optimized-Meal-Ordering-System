@@ -29,6 +29,19 @@ export default function HomeScreen() {
     );
   }, [isEnabled]);
 
+  WS.onMessage((data) => {
+    const msg = JSON.parse(JSON.parse(data.data))
+
+    switch (msg.type) {
+      case "user_recived_order":
+        navigation.replace("Order")
+        break;
+      default:
+        alert("Recieved unkown message with type: " + msg.type)
+        break;
+    }
+  })
+
   const toggleSwitch = () => {
     setIsEnabled(!isEnabled);
   };

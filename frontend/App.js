@@ -6,9 +6,11 @@ import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import LandingScreen from "./screens/LandingScreen";
 import HomeScreen from "./screens/HomeScreen";
+import OrderScreen from "./screens/OrderScreen";
 import { WS } from "./utils/socket";
 import { useEffect } from "react";
 import { auth } from "./firebase";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -29,11 +31,6 @@ export default function App() {
         WS.onError((data) => {
           alert(data.message);
         });
-
-        WS.onMessage((data) => {
-          const msg = JSON.parse(JSON.parse(data.data))
-          alert(msg.order)
-        })
       }
     })
 
@@ -65,6 +62,11 @@ export default function App() {
           options={{ headerShown: false }}
           name="Home"
           component={HomeScreen}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Order"
+          component={OrderScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
