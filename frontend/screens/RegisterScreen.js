@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Image } from 'react-native';
 import { ref, set } from "firebase/database";
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { Marker, Circle } from 'react-native-maps';
 
 export default function RegisterScreen() {
 
@@ -25,6 +25,7 @@ export default function RegisterScreen() {
 
     const [nameDone, setNameDone] = useState(false);
     const [vehicleDone, setVehicleDone] = useState(false);
+    const [mapLocationDone, setMapLocationDone] = useState(false);
     const [mapDone, setMapDone] = useState(false);
 
 
@@ -50,7 +51,7 @@ export default function RegisterScreen() {
     }
 
     const handleContinueMapClick = () => {
-        setMapDone(true);
+        setMapLocationDone(true);
     }
 
     const handleSignUp = () => {
@@ -142,7 +143,10 @@ export default function RegisterScreen() {
         return (
             <View>
                 <View style={styles.absoluteContainer}>
-                    <Text style={styles.mapText} >Please drag the marker to your location, so that we can assign you relevant orders</Text>
+                    <Text style={styles.mapText} >
+                        {!mapLocationDone ? "Please drag the marker to your location, so that we can assign you relevant orders"
+                            : "Great, now pick the radius in which you are willing to pick up orders"}
+                    </Text>
                     <TouchableOpacity onPress={() => handleContinueMapClick()} style={styles.mapButton}>
                         <Text style={styles.text}>Continue</Text>
                     </TouchableOpacity>
@@ -162,6 +166,18 @@ export default function RegisterScreen() {
                         }}
                         onDragEnd={(e) => setCoordinates(e.nativeEvent.coordinate)}
                     />
+                    {mapLocationDone &&
+                        <Circle
+                            center={coordinates}
+                            radius={1000}
+                            strokeWidth={1}
+                            strokeColor={'#1a66ff'}
+                            fillColor={'rgba(230,238,255,0.5)'}
+
+                        />
+
+
+                    }
                 </MapView>
             </View>
         )
