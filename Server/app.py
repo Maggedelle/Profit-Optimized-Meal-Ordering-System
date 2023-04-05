@@ -79,7 +79,7 @@ def sendOrderToRandomUser ():
 
 
 def startOrderSimulationThread ():
-    threading.Timer(5.0, sendOrderToRandomUser).start()
+    threading.Timer(25.0, sendOrderToRandomUser).start()
 
 @app.websocket("/ws/{client_id}")
 async def websocket_endpoint(websocket: WebSocket, client_id: str):
