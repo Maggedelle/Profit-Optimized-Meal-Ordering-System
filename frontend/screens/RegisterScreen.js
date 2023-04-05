@@ -103,14 +103,35 @@ export default function RegisterScreen() {
                 <View style={styles.icons}>
 
 
-                    <TouchableOpacity style={styles.iconContainer} onPress={() => handleVehicleClick("car")}>
-                        <Image style={styles.icon} source={car} />
+                    <TouchableOpacity style={styles.wrapperCar} onPress={() => handleVehicleClick("car")}>
+                        <View style={styles.wrapperIcon}>
+                            <Image style={styles.icon} source={car} />
+                        </View>
+                        <View style={styles.wrapperText}>
+                            <Text style={styles.boldBlackText}>Car</Text>
+                            <Text>50-80 km/h</Text>
+                        </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.iconContainer} onPress={() => handleVehicleClick("motorCycle")}>
-                        <Image style={styles.icon} source={motorCycle} />
+                    <TouchableOpacity style={styles.wrapperMotorCycle} onPress={() => handleVehicleClick("motorCycle")}>
+
+                        <View style={styles.wrapperIcon}>
+
+                            <Image style={styles.icon} source={motorCycle} />
+                        </View>
+                        <View style={styles.wrapperText}>
+                            <Text style={styles.boldBlackText}>Scooter</Text>
+                            <Text>30-45 km/h</Text>
+                        </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.iconContainer} onPress={() => handleVehicleClick("cycle")}>
-                        <Image style={styles.icon} source={cycle} />
+                    <TouchableOpacity style={styles.wrapperCycle} onPress={() => handleVehicleClick("cycle")}>
+                        <View style={styles.wrapperIcon}>
+
+                            <Image style={styles.icon} source={cycle} />
+                        </View>
+                        <View style={styles.wrapperText}>
+                            <Text style={styles.boldWhiteText}>Bike</Text>
+                            <Text style={styles.whiteTextNoFont}>15-25 km/h</Text>
+                        </View>
                     </TouchableOpacity>
                 </View>
 
@@ -172,7 +193,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: "#FFB6B9",
-        padding: 8
+        padding: 24
 
     },
     inputContainer: {
@@ -252,20 +273,75 @@ const styles = StyleSheet.create({
 
     icons: {
         display: "flex",
-        flexDirection: "row",
     },
 
-    iconContainer: {
-        width: 100,
+    wrapperCar: {
+        width: "100%",
         height: 140,
         alignItems: "center",
-        justifyContent: "center",
         margin: 20,
-        borderWidth: 3,
         overflow: "hidden",
-        borderColor: "#61C0BF",
-        borderRadius: 20
+        backgroundColor: "#FDF4F5",
+        padding: 16,
+        display: "flex",
+        flexDirection: "row",
+        gap: 20,
+        borderRadius: 20,
     },
+
+    wrapperMotorCycle: {
+        width: "100%",
+        height: 140,
+        alignItems: "center",
+        margin: 20,
+        overflow: "hidden",
+        backgroundColor: "#FFF8EF",
+        padding: 16,
+        display: "flex",
+        flexDirection: "row",
+        gap: 20,
+        borderRadius: 20,
+    },
+
+    wrapperCycle: {
+        width: "100%",
+        height: 140,
+        alignItems: "center",
+        margin: 20,
+        overflow: "hidden",
+        backgroundColor: "#4FCAAE",
+        padding: 16,
+        display: "flex",
+        flexDirection: "row",
+        gap: 20,
+        borderRadius: 20,
+    },
+
+    wrapperIcon: {
+        width: "45%",
+    },
+
+    wrapperText: {
+        flex: 1,
+    },
+
+    boldBlackText: {
+        fontWeight: 600,
+        fontFamily: 'anti-bold',
+        fontSize: 20,
+    },
+    boldWhiteText: {
+        fontWeight: 600,
+        fontFamily: 'anti-bold',
+        fontSize: 20,
+        color: "white",
+    },
+
+
+    whiteTextNoFont: {
+        color: "white",
+    },
+
 
     icon: {
         width: '100%',
