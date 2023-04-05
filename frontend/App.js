@@ -7,19 +7,41 @@ import RegisterScreen from "./screens/RegisterScreen";
 import LandingScreen from "./screens/LandingScreen";
 import HomeScreen from "./screens/HomeScreen";
 import { WS } from "./utils/socket";
+import { useEffect } from "react";
+import { auth } from "./firebase";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  WS.init();
 
-  WS.onOpen((data) => {
-    alert("Connected to websocket server");
-  });
 
-  WS.onError((data) => {
-    alert(data.message);
-  });
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
+
+        WS.init(user.uid);
+
+
+        WS.onOpen((data) => {
+          alert("Connected to websocket server");
+        });
+
+        WS.onError((data) => {
+          alert(data.message);
+        });
+
+        WS.onMessage((data) => {
+          const msg = JSON.parse(JSON.parse(data.data))
+          alert(msg.order)
+        })
+      }
+    })
+
+    return unsubscribe;
+  }, [])
+
+
+
 
   return (
     <NavigationContainer>
