@@ -46,8 +46,9 @@ export default function RegisterScreen() {
         setVehicleDone(true);
     }
 
-
-
+    const handleContinueMapClick = () => {
+        setMapDone(true);
+    }
 
     const handleSignUp = () => {
         auth.createUserWithEmailAndPassword(email, password)
@@ -112,7 +113,12 @@ export default function RegisterScreen() {
     } else if (!mapDone) {
         return (
             <View>
-
+                <View style={styles.absoluteContainer}>
+                    <Text style={styles.mapText} >Please drag the marker to your location, so that we can assign you relevant orders</Text>
+                    <TouchableOpacity onPress={() => handleContinueMapClick()} style={styles.mapButton}>
+                        <Text style={styles.text}>Continue</Text>
+                    </TouchableOpacity>
+                </View>
                 <MapView style={styles.map}
                     initialRegion={{
                         latitude: 57.0488,
@@ -164,6 +170,32 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
         width: '80%'
+    },
+    absoluteContainer: {
+        position: "absolute",
+        zIndex: 10,
+        bottom: 0,
+        backgroundColor: "#16C596",
+        width: "100%",
+        padding: 15,
+    },
+    mapText: {
+        textAlign: "center",
+        fontSize: 24,
+        fontWeight: 500,
+        fontFamily: 'anti',
+        color: "white",
+    },
+    mapButton: {
+        backgroundColor: "#F36a71",
+        textAlign: "center",
+        alignItems: "center",
+        display: "flex",
+        justifyContent: "center",
+        height: 50,
+        paddingHorizontal: 64,
+        borderRadius: 18,
+        fontWeight: 800,
     },
     input: {
         paddingHorizontal: 15,
