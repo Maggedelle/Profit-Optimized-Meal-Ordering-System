@@ -8,7 +8,7 @@
 #include <random>
 
 namespace approach {
-  std::tuple<std::vector<std::pair<Courier, Order>>, int, int> greedy_approach (std::vector<Courier> couriers,const std::vector<Order>& orders);
+  std::tuple<std::vector<std::tuple<Courier, Order, int, int>>, int, int> greedy_approach (std::vector<Courier> couriers,const std::vector<Order>& orders);
 
-  std::tuple<std::vector<std::pair<Courier, Order>>, int, int> random_approach (std::vector<Courier> couriers, const std::vector<Order>& orders, size_t random_N = 1);
+  std::tuple<std::vector<std::tuple<Courier, Order, int, int>>, int, int> random_approach (std::vector<Courier> couriers, const std::vector<Order>& orders, size_t random_N = 1);
 } 
