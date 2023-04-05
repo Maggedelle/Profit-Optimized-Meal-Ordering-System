@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Image } from 'react-native';
 import { ref, set } from "firebase/database";
+import MapView, { Marker } from 'react-native-maps';
 
 export default function RegisterScreen() {
 
@@ -13,7 +14,7 @@ export default function RegisterScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [vehicle, setVehicle] = useState('');
-
+    const [coordinates, setCoordinates] = useState(null);
     let car = require("../assets/car.png");
     let cycle = require("../assets/cycle.png");
     let motorCycle = require("../assets/motor-cycle.png");
@@ -21,6 +22,8 @@ export default function RegisterScreen() {
 
     const [nameDone, setNameDone] = useState(false);
     const [vehicleDone, setVehicleDone] = useState(false);
+    const [mapDone, setMapDone] = useState(false);
+
 
 
     const [loaded] = useFonts({
@@ -42,6 +45,8 @@ export default function RegisterScreen() {
         setVehicle(vehicle);
         setVehicleDone(true);
     }
+
+
 
 
     const handleSignUp = () => {
@@ -104,6 +109,29 @@ export default function RegisterScreen() {
 
             </KeyboardAvoidingView>
         )
+    } else if (!mapDone) {
+        return (
+            <View>
+
+                <MapView style={styles.map}
+                    initialRegion={{
+                        latitude: 57.0488,
+                        longitude: 9.9217,
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421,
+                    }}
+                >
+                    <Marker draggable
+                        coordinate={{
+                            latitude: 57.0488,
+                            longitude: 9.9217,
+                        }}
+                        onDragEnd={(e) => setCoordinates(e.nativeEvent.coordinate)}
+                    />
+                </MapView>
+            </View>
+        )
+
     } else {
         return (
             <KeyboardAvoidingView style={styles.container} behavior="height">
@@ -149,6 +177,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 40,
+    },
+
+    map: {
+        width: '100%',
+        height: '100%',
     },
 
     button: {
