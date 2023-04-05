@@ -14,7 +14,10 @@ export default function RegisterScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [vehicle, setVehicle] = useState('');
-    const [coordinates, setCoordinates] = useState(null);
+    const [coordinates, setCoordinates] = useState({
+        latitude: 57.0488,
+        longitude: 9.9217
+    });
     let car = require("../assets/car.png");
     let cycle = require("../assets/cycle.png");
     let motorCycle = require("../assets/motor-cycle.png");
@@ -58,6 +61,10 @@ export default function RegisterScreen() {
                     email: user.email,
                     name: name,
                     vehicle: vehicle,
+                    location: {
+                        longitude: coordinates.longitude,
+                        latitude: coordinates.latitude
+                    }
                 }).then(result => {
 
                 }).catch(error => alert(error.message))
