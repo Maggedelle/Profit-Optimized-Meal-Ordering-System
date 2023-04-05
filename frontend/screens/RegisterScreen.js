@@ -6,6 +6,7 @@ import { useFonts } from 'expo-font';
 import { Image } from 'react-native';
 import { ref, set } from "firebase/database";
 import MapView, { Marker, Circle } from 'react-native-maps';
+import { Slider } from '@miblanchard/react-native-slider';
 
 export default function RegisterScreen() {
 
@@ -28,7 +29,7 @@ export default function RegisterScreen() {
     const [mapLocationDone, setMapLocationDone] = useState(false);
     const [mapDone, setMapDone] = useState(false);
 
-
+    const [circleRadius, setCircleRadius] = useState(1000);
 
     const [loaded] = useFonts({
         'anti-bold': require('../assets/fonts/AntipastoPro-ExtraBold_trial.ttf'),
@@ -50,10 +51,6 @@ export default function RegisterScreen() {
         setVehicleDone(true);
     }
 
-    const handleContinueMapClick = () => {
-        setMapLocationDone(true);
-    }
-
     const handleSignUp = () => {
         auth.createUserWithEmailAndPassword(email, password)
             .then(userCredentials => {
@@ -71,6 +68,7 @@ export default function RegisterScreen() {
                 }).catch(error => alert(error.message))
             }).catch(error => alert(error.message))
     }
+
 
 
 
@@ -147,11 +145,18 @@ export default function RegisterScreen() {
                         {!mapLocationDone ? "Please drag the marker to your location, so that we can assign you relevant orders"
                             : "Great, now pick the radius in which you are willing to pick up orders"}
                     </Text>
-                    <TouchableOpacity onPress={() => handleContinueMapClick()} style={styles.mapButton}>
+                    {mapLocationDone && <Slider
+                        value={circleRadius}
+                        onValueChange={value => setCircleRadius(value[0])}
+                        minimumValue={500}
+                        maximumValue={10000}
+                    />}
+                    <TouchableOpacity onPress={() => mapLocationDone ? setMapDone(true) : setMapLocationDone(true)} style={styles.mapButton}>
                         <Text style={styles.text}>Continue</Text>
                     </TouchableOpacity>
                 </View>
                 <MapView style={styles.map}
+
                     initialRegion={{
                         latitude: 57.0488,
                         longitude: 9.9217,
@@ -169,7 +174,7 @@ export default function RegisterScreen() {
                     {mapLocationDone &&
                         <Circle
                             center={coordinates}
-                            radius={1000}
+                            radius={circleRadius}
                             strokeWidth={1}
                             strokeColor={'#1a66ff'}
                             fillColor={'rgba(230,238,255,0.5)'}
