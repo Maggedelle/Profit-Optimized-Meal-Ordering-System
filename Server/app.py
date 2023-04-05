@@ -57,7 +57,13 @@ async def sendOrderToUser (userId):
     if(user):
         objectToEmit = {
             "type": "user_recived_order",
-            "order": "someOrder"
+            "order": {
+                "id":"123",
+                "pickUp": "Mcdonalds, Østerågade 17",
+                "deliveryPoint": "Danmarksgade 19, 9000 Aalborg",
+                "distance": 4300,
+                "expectedDeliveryTime": "16:00",
+            }
         }
         await manager.send_personal_message(json.dumps(objectToEmit), user.socket)
         print("sent order to user!")
