@@ -12,7 +12,8 @@ import { useNavigation } from "@react-navigation/native";
 import { REACT_APP_API_URL } from "@env";
 import { useFonts } from "expo-font";
 import { WS } from "../utils/socket";
-
+import { useDispatch, useSelector } from 'react-redux';
+import { setOrder } from "../slices/orders";
 export default function HomeScreen() {
     const navigation = useNavigation();
 
@@ -31,7 +32,8 @@ export default function HomeScreen() {
         anti: require("../assets/fonts/AntipastoPro-DemiBold_trial.ttf"),
     });
 
-
+    const dispatch = useDispatch();
+    const { order } = useSelector((state) => state.order)
 
 
 
@@ -84,7 +86,7 @@ export default function HomeScreen() {
                             <Image style={styles.footerImage} source={deadlinePath} />
                             <View style={styles.dataContainer}>
                                 <Text style={styles.textNoFont}>
-                                    16:30
+                                    {order.id}
                                 </Text>
                             </View>
                         </View>
@@ -98,7 +100,7 @@ export default function HomeScreen() {
                 <TouchableOpacity onPress={() => console.log("lol")} style={styles.button}>
                     <Text style={styles.text}>Accept</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => console.log("lol")} style={styles.buttonDecline}>
+                <TouchableOpacity onPress={() => dispatch(setOrder({ id: "haha" }))} style={styles.buttonDecline}>
                     <Text style={styles.text}>Decline</Text>
                 </TouchableOpacity>
             </View>
