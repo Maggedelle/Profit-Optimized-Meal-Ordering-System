@@ -20,7 +20,7 @@ export default function HomeScreen() {
     const homeIconPath = require("../assets/home.png");
     const ordersIconPath = require("../assets/orders.png");
     const profileIconPath = require("../assets/profile.png");
-    const checklistPath = require("../assets/checklist.png");
+    const deliveryPath = require("../assets/delivery.png");
     const mapPath = require("../assets/map.png");
     const dollarPath = require("../assets/dollar.png");
     const distancePath = require("../assets/distance.png");
@@ -31,13 +31,16 @@ export default function HomeScreen() {
         anti: require("../assets/fonts/AntipastoPro-DemiBold_trial.ttf"),
     });
 
+
+
+
+
+
     return (
         <View style={styles.container}>
             <ScrollView>
                 <View style={styles.base}>
-                    <Image style={styles.bigImage} source={checklistPath} />
-                    <Text style={styles.header}>You recieved an order!</Text>
-                    <View style={styles.divider} />
+                    <Image style={styles.bigImage} source={deliveryPath} />
                     <View style={styles.table}>
 
 
@@ -111,7 +114,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#FFB6B9",
         justifyContent: "center",
         display: "flex",
-        paddingTop: "20%",
+        paddingTop: "10%",
     },
     base: {
         alignItems: "center",
@@ -172,9 +175,9 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     bigImage: {
-        width: 120,
-        height: 120,
-        marginBottom: 20,
+        width: 260,
+        height: 260,
+        borderRadius: 32,
     },
     switch: {
         transform: [{ scaleX: 2 }, { scaleY: 2 }],
@@ -192,7 +195,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
     },
     button: {
-        backgroundColor: "#1F7696",
+        backgroundColor: "#16C596",
         textAlign: "center",
         alignItems: "center",
         display: "flex",
