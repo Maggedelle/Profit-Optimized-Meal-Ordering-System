@@ -190,6 +190,30 @@ utils/approaches.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.s
 .PHONY : utils/approaches.cpp.s
 
+utils/assignment.o: utils/assignment.cpp.o
+.PHONY : utils/assignment.o
+
+# target to build an object file
+utils/assignment.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.o
+.PHONY : utils/assignment.cpp.o
+
+utils/assignment.i: utils/assignment.cpp.i
+.PHONY : utils/assignment.i
+
+# target to preprocess a source file
+utils/assignment.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.i
+.PHONY : utils/assignment.cpp.i
+
+utils/assignment.s: utils/assignment.cpp.s
+.PHONY : utils/assignment.s
+
+# target to generate assembly for a file
+utils/assignment.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/profit_module_cpp.dir/build.make CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.s
+.PHONY : utils/assignment.cpp.s
+
 utils/courier.o: utils/courier.cpp.o
 .PHONY : utils/courier.o
 
@@ -278,6 +302,9 @@ help:
 	@echo "... utils/approaches.o"
 	@echo "... utils/approaches.i"
 	@echo "... utils/approaches.s"
+	@echo "... utils/assignment.o"
+	@echo "... utils/assignment.i"
+	@echo "... utils/assignment.s"
 	@echo "... utils/courier.o"
 	@echo "... utils/courier.i"
 	@echo "... utils/courier.s"

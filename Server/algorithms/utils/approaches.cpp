@@ -1,10 +1,10 @@
-#include "approaches.hpp"
+#include "assignment.hpp"
 #include <random>
 
 namespace approach {
 
-  std::tuple<std::vector<std::tuple<Courier, Order, int, int>>, int, int> greedy_approach (std::vector<Courier> couriers, const std::vector<Order>& orders) {
-    std::vector<std::tuple<Courier, Order, int, int>> greedy_assignment {};
+  std::tuple<std::vector<Assignment>, int, int> greedy_approach (std::vector<Courier> couriers, const std::vector<Order>& orders) {
+    std::vector<Assignment> greedy_assignment {};
     int total_assignment_reward = 0;
     int total_assignment_travel_time = 0;
 
@@ -16,12 +16,14 @@ namespace approach {
 
       const auto courier = AC[0];
       const auto distance = utils::calc_distance(courier, order);
-      const auto order_duration = utils::calc_time_needed(distance, courier.speed);
+      const auto travel_time = utils::calc_time_needed(distance, courier.speed);
 
-      total_assignment_reward += utils::calc_reward(order_duration, order.expected_delivery, order.deadline, order.reward);
-      total_assignment_travel_time += order_duration; 
+      total_assignment_reward += utils::calc_reward(travel_time, order.expected_delivery, order.deadline, order.reward);
+      total_assignment_travel_time += travel_time; 
 
-      greedy_assignment.push_back({courier,order, distance, order_duration});
+      Assignment assignment(courier, order, distance, travel_time);
+
+      greedy_assignment.push_back(assignment);
       string id_to_remove = courier.id;
 
       couriers.erase(std::remove_if(begin(couriers),end(couriers),[id_to_remove](const auto& courier) {
@@ -32,8 +34,8 @@ namespace approach {
     return {greedy_assignment, total_assignment_reward, total_assignment_travel_time};
   }
   
-  std::tuple<std::vector<std::tuple<Courier, Order, int, int>>, int, int> random_approach (std::vector<Courier> couriers, const std::vector<Order>& orders, size_t random_N){
-    std::vector<std::tuple<Courier, Order, int, int>> random_assignment {};
+  std::tuple<std::vector<Assignment>, int, int> random_approach (std::vector<Courier> couriers, const std::vector<Order>& orders, size_t random_N){
+    std::vector<Assignment> random_assignment {};
     int total_assignment_reward = 0;
     int total_assignment_travel_time = 0;
 
@@ -54,12 +56,14 @@ namespace approach {
 
       const auto courier = random_select[0];
       const auto distance = utils::calc_distance(courier, order);
-      const auto order_duration = utils::calc_time_needed(distance, courier.speed);
+      const auto travel_time = utils::calc_time_needed(distance, courier.speed);
 
-      total_assignment_reward += utils::calc_reward(order_duration, order.expected_delivery, order.deadline, order.reward);
-      total_assignment_travel_time += order_duration; 
+      total_assignment_reward += utils::calc_reward(travel_time, order.expected_delivery, order.deadline, order.reward);
+      total_assignment_travel_time += travel_time; 
 
-      random_assignment.push_back({courier,order, distance, order_duration});
+      Assignment assignment(courier, order, distance, travel_time);
+
+      random_assignment.push_back(assignment);
       const auto id_to_remove = courier.id;
 
       couriers.erase(std::remove_if(begin(couriers),end(couriers),[id_to_remove](const auto& courier) {

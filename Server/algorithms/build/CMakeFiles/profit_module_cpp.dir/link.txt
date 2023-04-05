@@ -1,2 +1,2 @@
-/usr/bin/ar qc libprofit_module_cpp.a CMakeFiles/profit_module_cpp.dir/utils/courier.cpp.o CMakeFiles/profit_module_cpp.dir/utils/order.cpp.o CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o
+/usr/bin/ar qc libprofit_module_cpp.a CMakeFiles/profit_module_cpp.dir/utils/courier.cpp.o CMakeFiles/profit_module_cpp.dir/utils/order.cpp.o CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.o CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o
 /usr/bin/ranlib libprofit_module_cpp.a

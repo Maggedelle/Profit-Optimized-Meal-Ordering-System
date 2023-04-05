@@ -15,6 +15,8 @@ class Order {
     int deadline {};
     int reward {};
 
+    Order () {}
+
     Order(string _id, long double _order_lat, long double _order_long, long double _restaurant_lat, long double _restaurant_long, int _expected_delivery, int _deadline, int _reward) : 
       id(_id), 
       order_lat(_order_lat), 

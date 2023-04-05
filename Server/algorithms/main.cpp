@@ -1,5 +1,6 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
+#include <string>
 #include "utils/approaches.hpp"
 
 #define STRINGIFY(x) #x
@@ -59,8 +60,22 @@ PYBIND11_MODULE(profit_module, m) {
           return "Order id: " + order.id + "";
         });
 
+  py::class_<Assignment>(m,"Assignment")
+    .def(py::init<
+        const Courier&,
+        const Order&,
+        const int&,
+        const int&>())
+    .def_readwrite("courier", &Assignment::courier)
+    .def_readwrite("order", &Assignment::order)
+    .def_readwrite("distance", &Assignment::distance)
+    .def_readwrite("travel_time", &Assignment::travel_time)
+    .def("__repr__", [](const Assignment& a) {
+          return "Courier id: " + a.courier.id + ", order id: " + a.order.id + ", distance: " + std::to_string(a.distance)  + ", travel time: " + std::to_string(a.travel_time); 
+        });
+
   m.def("greedy_approach", &approach::greedy_approach, "The greedy approach to assigning couriers to orders");
   m.def("random_approach", &approach::random_approach, "The random approach to assigning couriers to orders");
 
-  m.attr("__version__") = "0.1";
+  m.attr("__version__") = "0.5";
 }
