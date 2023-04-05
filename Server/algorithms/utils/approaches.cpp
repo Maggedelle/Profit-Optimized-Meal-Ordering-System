@@ -3,8 +3,8 @@
 
 namespace approach {
 
-  std::tuple<std::vector<std::pair<Courier, Order>>, int, int> greedy_approach (std::vector<Courier> couriers, const std::vector<Order>& orders) {
-    std::vector<std::pair<Courier, Order>> greedy_assignment {};
+  std::tuple<std::vector<std::tuple<Courier, Order, int, int>>, int, int> greedy_approach (std::vector<Courier> couriers, const std::vector<Order>& orders) {
+    std::vector<std::tuple<Courier, Order, int, int>> greedy_assignment {};
     int total_assignment_reward = 0;
     int total_assignment_travel_time = 0;
 
@@ -21,7 +21,7 @@ namespace approach {
       total_assignment_reward += utils::calc_reward(order_duration, order.expected_delivery, order.deadline, order.reward);
       total_assignment_travel_time += order_duration; 
 
-      greedy_assignment.push_back(std::make_pair(courier,order));
+      greedy_assignment.push_back({courier,order, distance, order_duration});
       string id_to_remove = courier.id;
 
       couriers.erase(std::remove_if(begin(couriers),end(couriers),[id_to_remove](const auto& courier) {
@@ -32,8 +32,8 @@ namespace approach {
     return {greedy_assignment, total_assignment_reward, total_assignment_travel_time};
   }
   
-  std::tuple<std::vector<std::pair<Courier, Order>>, int, int> random_approach (std::vector<Courier> couriers, const std::vector<Order>& orders, size_t random_N){
-    std::vector<std::pair<Courier, Order>> random_assignment {};
+  std::tuple<std::vector<std::tuple<Courier, Order, int, int>>, int, int> random_approach (std::vector<Courier> couriers, const std::vector<Order>& orders, size_t random_N){
+    std::vector<std::tuple<Courier, Order, int, int>> random_assignment {};
     int total_assignment_reward = 0;
     int total_assignment_travel_time = 0;
 
@@ -59,7 +59,7 @@ namespace approach {
       total_assignment_reward += utils::calc_reward(order_duration, order.expected_delivery, order.deadline, order.reward);
       total_assignment_travel_time += order_duration; 
 
-      random_assignment.push_back(std::make_pair(courier,order));
+      random_assignment.push_back({courier,order, distance, order_duration});
       const auto id_to_remove = courier.id;
 
       couriers.erase(std::remove_if(begin(couriers),end(couriers),[id_to_remove](const auto& courier) {
