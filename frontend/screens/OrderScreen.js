@@ -12,7 +12,8 @@ import { useNavigation } from "@react-navigation/native";
 import { REACT_APP_API_URL } from "@env";
 import { useFonts } from "expo-font";
 import { WS } from "../utils/socket";
-
+import { useDispatch, useSelector } from 'react-redux';
+import { setOrderState } from "../slices/orders";
 export default function HomeScreen() {
     const navigation = useNavigation();
 
@@ -31,10 +32,17 @@ export default function HomeScreen() {
         anti: require("../assets/fonts/AntipastoPro-DemiBold_trial.ttf"),
     });
 
+    const dispatch = useDispatch();
+    const { order } = useSelector((state) => state.order)
 
 
+    const onAcceptPress = () => {
+        dispatch(setOrderState("Accepted"));
+    }
 
-
+    const onDeclinePress = () => {
+        dispatch(setOrderState("Declined"));
+    }
 
     return (
         <View style={styles.container}>
@@ -48,7 +56,7 @@ export default function HomeScreen() {
                             <Image style={styles.footerImage} source={restaurantPath} />
                             <View style={styles.dataContainer}>
                                 <Text style={styles.textNoFont}>
-                                    Mcdonalds,  Østerågade 17
+                                    {order.pickUp}
                                 </Text>
                             </View>
                         </View>
@@ -57,7 +65,7 @@ export default function HomeScreen() {
                             <Image style={styles.footerImage} source={mapPath} />
                             <View style={styles.dataContainer}>
                                 <Text style={styles.textNoFont}>
-                                    Danmarksgade 19, 9000 Aalborg
+                                    {order.deliveryPoint}
                                 </Text>
                             </View>
                         </View>
@@ -75,7 +83,7 @@ export default function HomeScreen() {
                             <Image style={styles.footerImage} source={distancePath} />
                             <View style={styles.dataContainer}>
                                 <Text style={styles.textNoFont}>
-                                    4322 Meters
+                                    {order.distance} meters
                                 </Text>
                             </View>
                         </View>
@@ -84,7 +92,7 @@ export default function HomeScreen() {
                             <Image style={styles.footerImage} source={deadlinePath} />
                             <View style={styles.dataContainer}>
                                 <Text style={styles.textNoFont}>
-                                    16:30
+                                    {order.expectedDeliveryTime}
                                 </Text>
                             </View>
                         </View>
@@ -95,10 +103,10 @@ export default function HomeScreen() {
             </ScrollView>
             <View style={styles.footer}>
 
-                <TouchableOpacity onPress={() => console.log("lol")} style={styles.button}>
+                <TouchableOpacity onPress={onAcceptPress} style={styles.button}>
                     <Text style={styles.text}>Accept</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => console.log("lol")} style={styles.buttonDecline}>
+                <TouchableOpacity onPress={onDeclinePress} style={styles.buttonDecline}>
                     <Text style={styles.text}>Decline</Text>
                 </TouchableOpacity>
             </View>

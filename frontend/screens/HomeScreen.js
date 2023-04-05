@@ -12,11 +12,13 @@ import { useNavigation } from "@react-navigation/native";
 import { REACT_APP_API_URL } from "@env";
 import { useFonts } from "expo-font";
 import { WS } from "../utils/socket";
+import { useDispatch, useSelector } from 'react-redux';
+import { setOrder } from "../slices/orders";
 
 export default function HomeScreen() {
   const navigation = useNavigation();
 
-
+  const dispatch = useDispatch();
   const [isEnabled, setIsEnabled] = useState(false);
 
   useEffect(() => {
@@ -34,6 +36,13 @@ export default function HomeScreen() {
 
     switch (msg.type) {
       case "user_recived_order":
+        dispatch(setOrder({
+          id: msg.order.id,
+          pickUp: msg.order.pickUp,
+          deliveryPoint: msg.order.deliveryPoint,
+          expectedDeliveryTime: msg.order.expectedDeliveryTime,
+          distance: msg.order.distance,
+        }))
         navigation.replace("Order")
         break;
       default:
@@ -41,6 +50,8 @@ export default function HomeScreen() {
         break;
     }
   })
+
+
 
   const toggleSwitch = () => {
     setIsEnabled(!isEnabled);

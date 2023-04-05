@@ -10,7 +10,8 @@ import OrderScreen from "./screens/OrderScreen";
 import { WS } from "./utils/socket";
 import { useEffect } from "react";
 import { auth } from "./firebase";
-
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 const Stack = createNativeStackNavigator();
 
@@ -41,35 +42,37 @@ export default function App() {
 
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="Landing"
-          component={LandingScreen}
-        />
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="Login"
-          component={LoginScreen}
-        />
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="Register"
-          component={RegisterScreen}
-        />
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="Home"
-          component={HomeScreen}
-        />
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="Order"
-          component={OrderScreen}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="Landing"
+            component={LandingScreen}
+          />
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="Login"
+            component={LoginScreen}
+          />
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="Register"
+            component={RegisterScreen}
+          />
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="Home"
+            component={HomeScreen}
+          />
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="Order"
+            component={OrderScreen}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
