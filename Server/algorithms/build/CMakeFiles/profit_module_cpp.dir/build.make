@@ -111,10 +111,24 @@ CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/utility.cpp -o CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.s
 
+CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.o: CMakeFiles/profit_module_cpp.dir/flags.make
+CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.o: ../utils/assignment.cpp
+CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.o: CMakeFiles/profit_module_cpp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.o -MF CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.o.d -o CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.o -c /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/assignment.cpp
+
+CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/assignment.cpp > CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.i
+
+CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/assignment.cpp -o CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.s
+
 CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o: CMakeFiles/profit_module_cpp.dir/flags.make
 CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o: ../utils/approaches.cpp
 CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o: CMakeFiles/profit_module_cpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o -MF CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o.d -o CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o -c /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/approaches.cpp
 
 CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.i: cmake_force
@@ -130,6 +144,7 @@ profit_module_cpp_OBJECTS = \
 "CMakeFiles/profit_module_cpp.dir/utils/courier.cpp.o" \
 "CMakeFiles/profit_module_cpp.dir/utils/order.cpp.o" \
 "CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o" \
+"CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.o" \
 "CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o"
 
 # External object files for target profit_module_cpp
@@ -138,10 +153,11 @@ profit_module_cpp_EXTERNAL_OBJECTS =
 libprofit_module_cpp.a: CMakeFiles/profit_module_cpp.dir/utils/courier.cpp.o
 libprofit_module_cpp.a: CMakeFiles/profit_module_cpp.dir/utils/order.cpp.o
 libprofit_module_cpp.a: CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o
+libprofit_module_cpp.a: CMakeFiles/profit_module_cpp.dir/utils/assignment.cpp.o
 libprofit_module_cpp.a: CMakeFiles/profit_module_cpp.dir/utils/approaches.cpp.o
 libprofit_module_cpp.a: CMakeFiles/profit_module_cpp.dir/build.make
 libprofit_module_cpp.a: CMakeFiles/profit_module_cpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libprofit_module_cpp.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libprofit_module_cpp.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/profit_module_cpp.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/profit_module_cpp.dir/link.txt --verbose=$(VERBOSE)
 

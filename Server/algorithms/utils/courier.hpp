@@ -11,6 +11,8 @@ class Courier {
     int speed {};
     int max_distance {};
 
+    Courier () {}
+
     Courier(string _id, long double _latitude, long double _longitude, int _speed, int _max_distance) : 
       id(_id),
       latitude(_latitude),
