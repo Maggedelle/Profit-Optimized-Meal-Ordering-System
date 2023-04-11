@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build",
+  "command": "/usr/bin/c++   -fPIC -std=c++20 -o CMakeFiles/profit_module_cpp.dir/utils/courier.cpp.o -c /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/courier.cpp",
+  "file": "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/courier.cpp"
+},
+{
+  "directory": "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build",
+  "command": "/usr/bin/c++   -fPIC -std=c++20 -o CMakeFiles/profit_module_cpp.dir/utils/order.cpp.o -c /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/order.cpp",
+  "file": "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/order.cpp"
+},
+{
+  "directory": "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build",
+  "command": "/usr/bin/c++   -fPIC -std=c++20 -o CMakeFiles/profit_module_cpp.dir/utils/utility.cpp.o -c /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/utility.cpp",
+  "file": "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/utility.cpp"
+},
+{
+  "directory": "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build",
+  "command": "/usr/bin/c++   -fPIC -std=c++20 -o CMakeFiles/profit_module_cpp.dir/utils/greedy.cpp.o -c /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/greedy.cpp",
+  "file": "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/greedy.cpp"
+},
+{
+  "directory": "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build",
+  "command": "/usr/bin/c++   -fPIC -std=c++20 -o CMakeFiles/profit_module_cpp.dir/utils/profit_wrap.cpp.o -c /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/profit_wrap.cpp",
+  "file": "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/utils/profit_wrap.cpp"
+},
+{
+  "directory": "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/build",
+  "command": "/usr/bin/c++ -Dprofit_module_EXPORTS -isystem /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/pybind11/include -isystem /usr/include/python3.10 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -std=c++20 -o CMakeFiles/profit_module.dir/main.cpp.o -c /home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/main.cpp",
+  "file": "/home/sandborg/uniCode/Profit-Optimized-Meal-Ordering-System/Server/algorithms/main.cpp"
+}
+]
