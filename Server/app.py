@@ -1,4 +1,4 @@
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request
 import uvicorn
 import datetime as dt
 import json
@@ -75,17 +75,17 @@ def sendOrderToRandomUser ():
     print("trying to send order to random user...")
     if(len(connections) > 0):
         randomUser = random.choice(connections)
-
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        loop.run_until_complete(sendOrderToUser(randomUser.id))
-        loop.close()
-    startOrderSimulationThread()
+        sendOrderToRandomUser(randomUser)
+        
 
 
 
-def startOrderSimulationThread ():
-    threading.Timer(25.0, sendOrderToRandomUser).start()
+
+@app.get("/processOrders")
+def read_root( request: Request):
+    sendOrderToRandomUser()
+    return "Sent orders"
+
 
 @app.websocket("/ws/{client_id}")
 async def websocket_endpoint(websocket: WebSocket, client_id: str):
@@ -105,5 +105,4 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
         manager.disconnect(websocket)
 
 if __name__ == "__main__":
-    startOrderSimulationThread()
     uvicorn.run(app, host="0.0.0.0", port=5000)
