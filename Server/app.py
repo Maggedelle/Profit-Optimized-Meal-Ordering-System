@@ -75,7 +75,7 @@ def sendOrderToRandomUser ():
     print("trying to send order to random user...")
     if(len(connections) > 0):
         randomUser = random.choice(connections)
-        sendOrderToRandomUser(randomUser)
+        sendOrderToUser(randomUser.id)
         
 
 
