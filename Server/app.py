@@ -71,19 +71,16 @@ async def sendOrderToUser (userId):
         raise Exception("Can't send order because user doesn't exist")
 
 
-def sendOrderToRandomUser ():
+async def sendOrderToRandomUser ():
     print("trying to send order to random user...")
     if(len(connections) > 0):
         randomUser = random.choice(connections)
-        sendOrderToUser(randomUser.id)
+        await sendOrderToUser(randomUser.id)
         
 
-
-
-
 @app.get("/processOrders")
-def read_root( request: Request):
-    sendOrderToRandomUser()
+async def read_root( request: Request):
+    await sendOrderToRandomUser()
     return "Sent orders"
 
 
