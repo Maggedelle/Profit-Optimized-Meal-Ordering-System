@@ -10,4 +10,6 @@ namespace utils {
   std::vector<Courier> get_available_couriers (const std::vector<Courier>& couriers, const Order& order);
   int calc_time_needed(const long double& dist, const int& velocity);
   int calc_reward(const int& order_duration, const int& expected_time, const int& deadline, const int& reward);
+  std::vector<Courier> create_couriers(const int N);
+  std::vector<Order> create_orders(const int N);
 }

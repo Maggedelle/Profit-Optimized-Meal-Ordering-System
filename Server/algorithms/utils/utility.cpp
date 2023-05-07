@@ -1,8 +1,11 @@
 #include "utility.hpp"
 #include "iostream"
+#include <random>
+#include <string>
 
 constexpr long double R = 6371;
 constexpr int penalty   =    1;
+constexpr int speeds[]  = {15000,25000,40000};
 
 namespace utils {
 
@@ -87,5 +90,58 @@ namespace utils {
     }
 
     return total_reward;
+  }
+
+  std::vector<Courier> create_couriers(const int N) {
+    std::random_device rand;
+    std::mt19937 gen(rand());
+    std::uniform_real_distribution<> dist_cords(-1.7697222222222221,-1.6497222222222223);
+    std::uniform_int_distribution<> dist_vehicle(0,2); 
+    std::uniform_int_distribution<> dist_distance(2000,8000);
+    
+    std::vector<Courier> couriers {};
+
+    for(int i = 0; i < N; i++) {
+      Courier courier;
+      courier.id = std::to_string(i+1);
+      courier.latitude = 53.32055555555556;
+      courier.longitude = dist_cords(gen);
+      courier.speed = speeds[dist_vehicle(gen)];
+      courier.max_distance = dist_distance(gen);
+
+      couriers.push_back(courier);
+    }
+
+    return couriers;
+  }
+
+  std::vector<Order> create_orders(const int N) {
+    std::random_device rand;
+    std::mt19937 gen(rand());
+    std::uniform_real_distribution<> dist_cords_long(-1.7697222222222221,-1.6497222222222223);
+    std::uniform_real_distribution<> dist_cords_lat(53.32055555555556,53.34055555555556);
+    std::uniform_int_distribution<> dist_reward(75,150);
+    std::uniform_int_distribution<> dist_expected_delivery(30,45);
+
+    std::vector<Order> orders {};
+
+    for(int i = 0; i < N; i++) {
+      Order order {};
+      order.id = std::to_string(i+1);
+      order.order_lat = dist_cords_lat(gen);
+      order.order_long = dist_cords_long(gen);
+      order.restaurant_lat = dist_cords_lat(gen);
+      order.restaurant_long = dist_cords_long(gen);
+      order.expected_delivery = dist_expected_delivery(gen);
+      order.reward = dist_reward(gen);
+
+
+      std::uniform_int_distribution<> dist_deadline(order.expected_delivery+1, order.expected_delivery+20);
+      order.deadline = dist_deadline(gen);
+
+      orders.push_back(order);
+    }
+
+    return orders;
   }
 }

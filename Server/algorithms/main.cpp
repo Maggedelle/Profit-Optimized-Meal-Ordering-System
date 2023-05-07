@@ -76,6 +76,8 @@ PYBIND11_MODULE(profit_module, m) {
 
   m.def("greedy_approach", &approach::greedy_approach, "The greedy approach to assigning couriers to orders");
   m.def("random_approach", &approach::random_approach, "The random approach to assigning couriers to orders");
+  m.def("create_couriers", &utils::create_couriers, "Create N amnount of couriers");
+  m.def("create_orders", &utils::create_orders, "Create N amount of orders");
 
   m.attr("__version__") = "0.5";
 }
