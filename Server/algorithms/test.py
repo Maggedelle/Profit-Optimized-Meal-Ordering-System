@@ -6,7 +6,7 @@ from profit_module import *
 
 # Test: Average reward, travel time and orders completed. N = [10,100,1000,10000], with the average of 100 tests per N.
 
-N = [10,50,200,500,1000,2000]
+N = [10,50,200,500,1000,2000,5000]
 results_greedy = []
 results_random = []
 start = time.time()
@@ -19,6 +19,7 @@ for n in N:
     total_assignments_completed_greedy = 0
     total_assignments_completed_random = 0
     total_reward_possible = 0
+    n_start = time.time()
 
     for _ in range(100):
         couriers = create_couriers(n)
@@ -47,7 +48,9 @@ for n in N:
 
     results_greedy.append((avg_total_reward_greedy, avg_total_travel_time_greedy, avg_total_assignments_completed_greedy))
     results_random.append((avg_total_reward_random, avg_total_travel_time_random, avg_total_assignments_completed_random))
+    n_end = time.time()
     print("Results for n =",n)
+    print("Test duratation",(n_end-n_start)/60,"minutes")
     print("Max reward possible:", avg_total_reward_possible)
     print("   Greedy results:")
     print("     Reward achieved      :",avg_total_reward_greedy)
@@ -62,6 +65,6 @@ for n in N:
 
 
 end = time.time()
-print("Testing took:",(end-start)/60)
+print("Total test duration:",(end-start)/60,"minutes")
 print(results_greedy)
 print(results_random)
