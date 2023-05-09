@@ -5,7 +5,7 @@
 
 constexpr long double R = 6371;
 constexpr int penalty   =    1;
-constexpr int speeds[]  = {15000,25000,40000};
+constexpr int speeds[]  = {12000,20000,40000};
 
 namespace utils {
 
@@ -95,6 +95,7 @@ namespace utils {
   std::vector<Courier> create_couriers(const int N) {
     std::random_device rand;
     std::mt19937 gen(rand());
+    std::uniform_real_distribution<> dist_cords_lat(53.32055555555556,53.34055555555556);
     std::uniform_real_distribution<> dist_cords(-1.7697222222222221,-1.6497222222222223);
     std::uniform_int_distribution<> dist_vehicle(0,2); 
     std::uniform_int_distribution<> dist_distance(2000,8000);
@@ -104,7 +105,7 @@ namespace utils {
     for(int i = 0; i < N; i++) {
       Courier courier;
       courier.id = std::to_string(i+1);
-      courier.latitude = 53.32055555555556;
+      courier.latitude = dist_cords_lat(gen);
       courier.longitude = dist_cords(gen);
       courier.speed = speeds[dist_vehicle(gen)];
       courier.max_distance = dist_distance(gen);

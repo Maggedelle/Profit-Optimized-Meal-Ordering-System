@@ -1,13 +1,67 @@
+import time
 import sys
 sys.path.append('build')
 
-import profit_module as pm
+from profit_module import *
 
-couriers = pm.create_couriers(1000);
-orders = pm.create_orders(100)
+# Test: Average reward, travel time and orders completed. N = [10,100,1000,10000], with the average of 100 tests per N.
 
-assignment, reward, travel_time = pm.greedy_approach(couriers, orders)
-assignment1, reward1, travel_time1 = pm.random_approach(couriers, orders, 1)
+N = [10,50,200,500,1000,2000]
+results_greedy = []
+results_random = []
+start = time.time()
 
-print("Greedy assignment:", reward, travel_time)
-print("Random assignment:", reward1, travel_time1)
+for n in N:
+    total_reward_greedy = 0
+    total_reward_random = 0
+    total_travel_time_greedy = 0
+    total_travel_time_random = 0
+    total_assignments_completed_greedy = 0
+    total_assignments_completed_random = 0
+    total_reward_possible = 0
+
+    for _ in range(100):
+        couriers = create_couriers(n)
+        orders = create_orders(n)
+
+        for order in orders:
+            total_reward_possible += order.reward
+
+        assignment_greedy, reward_greedy, travel_time_greedy = greedy_approach(couriers, orders)
+        assignment_random, reward_random, travel_time_random = random_approach(couriers, orders, 1)
+
+        total_reward_greedy += reward_greedy 
+        total_reward_random += reward_random
+        total_travel_time_greedy += travel_time_greedy
+        total_travel_time_random += travel_time_random
+        total_assignments_completed_greedy += len(assignment_greedy)
+        total_assignments_completed_random += len(assignment_random)
+
+    avg_total_reward_greedy = total_reward_greedy / 100
+    avg_total_reward_random = total_reward_random / 100
+    avg_total_travel_time_greedy = total_travel_time_greedy / 100
+    avg_total_travel_time_random = total_travel_time_random / 100
+    avg_total_assignments_completed_greedy = total_assignments_completed_greedy / 100 
+    avg_total_assignments_completed_random = total_assignments_completed_random / 100 
+    avg_total_reward_possible = total_reward_possible / 100
+
+    results_greedy.append((avg_total_reward_greedy, avg_total_travel_time_greedy, avg_total_assignments_completed_greedy))
+    results_random.append((avg_total_reward_random, avg_total_travel_time_random, avg_total_assignments_completed_random))
+    print("Results for n =",n)
+    print("Max reward possible:", avg_total_reward_possible)
+    print("   Greedy results:")
+    print("     Reward achieved      :",avg_total_reward_greedy)
+    print("     Travel time          :",avg_total_travel_time_greedy)
+    print("     Assignments completed:",avg_total_assignments_completed_greedy)
+    print("   Random results:")
+    print("     Reward achieved      :",avg_total_reward_random)
+    print("     Travel time          :",avg_total_travel_time_random)
+    print("     Assignments completed:",avg_total_assignments_completed_random)
+    print("------------------------------------------")
+
+
+
+end = time.time()
+print("Testing took:",(end-start)/60)
+print(results_greedy)
+print(results_random)
